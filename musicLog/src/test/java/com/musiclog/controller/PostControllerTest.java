@@ -28,9 +28,7 @@ class PostControllerTest {
         //글 제목
         //글 내용
         //사용자
-            //id
-            //user
-            //level
+
 
         //expected
         mockMvc.perform(post("/posts")
@@ -38,7 +36,24 @@ class PostControllerTest {
                         .content("{\"title\":\"제목입니다.\",\"content\":\"내용입니다.\"}")
                 )
                 .andExpect(status().isOk())
-                .andExpect(content().string("Hello World"))
+                .andExpect(content().string("{}"))
                 .andDo(print());
     }
+
+    @Test
+    @DisplayName("/posts 요청 시 title 값은 필수다.")
+    void test2() throws Exception {
+
+        //expected
+        mockMvc.perform(post("/posts")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"title\":null,\"content\":\"내용입니다.\"}")
+                )
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.code").value("400")) //jsonPath 공부 할 것 object, array 검증
+                .andExpect(jsonPath("$.message").value("잘못된 요청입니다.")) //jsonPath 공부 할 것 object, array 검증
+                .andExpect(jsonPath("$.validation.title").value("타이틀을 입력해주세요")) //jsonPath 공부 할 것 object, array 검증
+                .andDo(print());
+    }
+
 }
