@@ -1,7 +1,10 @@
 package com.musiclog.controller;
 
+import com.musiclog.domain.Post;
 import com.musiclog.request.PostCreate;
+import com.musiclog.service.PostService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -13,24 +16,11 @@ import java.util.Map;
 
 @Slf4j
 @RestController
+@RequiredArgsConstructor
 public class PostController {
 
-//    @PostMapping("/posts")
-    public String post(@RequestParam String title, @RequestParam String content){
+    private final PostService postService;
 
-        log.info("title = {}, content={}",title,content);
-        return "Hello World";
-    }
-
-//    @PostMapping("/posts")
-    public String post(@RequestParam Map<String, String> params){
-
-        log.info("params = {}", params);
-
-        String title = params.get("title");
-
-        return "Hello World";
-    }
 
     //데이터를 검증하는 이유
 
@@ -40,23 +30,10 @@ public class PostController {
     //4. DB에 값을 저장할 때 의도치 않은 오류가 발생할 수 있다.
     //5. 서버 개발자의 편안함을 위해서
     @PostMapping("/posts")
-    public Map<String,String> post(@RequestBody @Valid PostCreate params)  {
-
-//        if (result.hasErrors()) {
-//            List<FieldError> fieldErrors = result.getFieldErrors();
-//            FieldError firstFieldError = fieldErrors.get(0);
-//            String fieldName = firstFieldError.getField();
-//            String errorMessage = firstFieldError.getDefaultMessage();
-//
-//            Map<String, String> error = new HashMap<>();
-//            error.put(fieldName, errorMessage);
-//            return error;
-//        }
-        // client 개발자에게 오류 내용을 알려주는 방법
-//        var title = params.getTitle();
-
-
-        return Map.of();
+    public void post(@RequestBody @Valid PostCreate request)  {
+        //Case1. 저장한 데이터 Entity -> response로 응답하기
+        //Case2. 저장한 데이터의 primary_id -> response로 응답하
+         postService.write(request);
     }
 
 
