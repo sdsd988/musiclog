@@ -2,6 +2,7 @@ package com.musiclog.controller;
 
 import com.musiclog.domain.Post;
 import com.musiclog.request.PostCreate;
+import com.musiclog.response.PostResponse;
 import com.musiclog.service.PostService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -41,12 +42,18 @@ public class PostController {
      * /posts/{postId} -> 글 한개만 조회
      */
     @GetMapping("/posts/{postId}")
-    public Post get(@PathVariable(name = "postId")Long id) {
-        Post post = postService.get(id);
+    public PostResponse get(@PathVariable(name = "postId")Long id) {
 
-        return post;
+        //Request 클래스
+        //Response 클래스
 
+        PostResponse response = postService.get(id);
+
+        return response;
     }
+
+
+
 
 
 

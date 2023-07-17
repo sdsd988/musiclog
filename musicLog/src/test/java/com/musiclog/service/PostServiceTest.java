@@ -3,6 +3,7 @@ package com.musiclog.service;
 import com.musiclog.domain.Post;
 import com.musiclog.repository.PostRepository;
 import com.musiclog.request.PostCreate;
+import com.musiclog.response.PostResponse;
 import org.aspectj.weaver.AjAttribute;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -62,12 +63,12 @@ class PostServiceTest {
         postRepository.save(requestPost);
 
         //when
-        Post post = postService.get(requestPost.getId());
+        PostResponse response = postService.get(requestPost.getId());
 
         //then
-        assertNotNull(post);
-        assertEquals("foo", post.getTitle());
-        assertEquals("bar", post.getContents());
+        assertNotNull(response);
+        assertEquals("foo", response.getTitle());
+        assertEquals("bar", response.getContent());
 
     }
 
