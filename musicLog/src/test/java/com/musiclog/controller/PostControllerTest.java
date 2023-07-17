@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.musiclog.domain.Post;
 import com.musiclog.repository.PostRepository;
 import com.musiclog.request.PostCreate;
+import com.musiclog.service.PostService;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -31,6 +32,9 @@ class PostControllerTest {
 
     @Autowired
     private PostRepository postRepository;
+
+    @Autowired
+    private PostService postService;
 
     @BeforeEach
     void clean(){
@@ -112,6 +116,28 @@ class PostControllerTest {
         Post post = postRepository.findAll().get(0);
         assertEquals("제목입니다.", post.getTitle());
         assertEquals("내용입니다.", post.getContents());
+
+    }
+
+
+    @Test
+    @DisplayName("글 1개 조회")
+    void test4() throws Exception {
+        //given
+        Post post = Post.builder()
+                .title("foo")
+                .contents("bar")
+                .build();
+        postRepository.save(post);
+
+        //expected
+        mockMvc.perform(get("/posts/{postId}",post.getId())
+                        .contentType(APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(post.getId()))
+                .andExpect(jsonPath("$.title").value("foo"))
+                .andExpect(jsonPath("$.contents").value("bar"))
+                .andDo(print());
 
     }
 

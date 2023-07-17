@@ -32,9 +32,22 @@ public class PostController {
     @PostMapping("/posts")
     public void post(@RequestBody @Valid PostCreate request)  {
         //Case1. 저장한 데이터 Entity -> response로 응답하기
-        //Case2. 저장한 데이터의 primary_id -> response로 응답하
+        //Case2. 저장한 데이터의 primary_id -> response로 응답하기
          postService.write(request);
     }
+
+    /**
+     * /posts -> 글 전체 조회(검색 + 페이징)
+     * /posts/{postId} -> 글 한개만 조회
+     */
+    @GetMapping("/posts/{postId}")
+    public Post get(@PathVariable(name = "postId")Long id) {
+        Post post = postService.get(id);
+
+        return post;
+
+    }
+
 
 
 
