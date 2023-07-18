@@ -3,12 +3,17 @@ package com.musiclog.service;
 import com.musiclog.domain.Post;
 import com.musiclog.repository.PostRepository;
 import com.musiclog.request.PostCreate;
+import com.musiclog.request.PostSearch;
 import com.musiclog.response.PostResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -20,7 +25,7 @@ public class PostService {
     public void write(PostCreate postCreate){
         Post post = Post.builder()
                 .title(postCreate.getTitle())
-                .contents(postCreate.getContent())
+                .content(postCreate.getContent())
                 .build();
 
          postRepository.save(post);
@@ -30,13 +35,24 @@ public class PostService {
         Post post = postRepository.findById(id).orElseThrow(()->new IllegalArgumentException("존재하지 않는 글입니다."));
 
 
-        PostResponse response = PostResponse.builder()
+        return PostResponse.builder()
                 .id(post.getId())
                 .title(post.getTitle())
-                .content(post.getContents())
+                .content(post.getContent())
                 .build();
 
-        return response;
+    }
+
+    // 글이 너무 많은 경우 -> 비용이 너무 많이 든다.
+    // 글이 ->10,000,000 -> DB글 모두 조회하는 경우 -> DB가 뻗을 수 있다.
+    // DB -> 애플리케이션 서버로 전달하는 시간, 트래팍바용 등이 많이 발생할 수 있다.
+
+    public List<PostResponse> getList(PostSearch postSearch) {
+
+        return postRepository.getList(postSearch).stream()
+                .map(PostResponse::new)
+                .collect(Collectors.toList());
+
     }
 
 

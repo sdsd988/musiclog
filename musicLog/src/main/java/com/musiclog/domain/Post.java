@@ -17,13 +17,13 @@ public class Post {
     private String title;
 
     @Lob
-    private String contents;
+    private String content;
 
 
     @Builder
-    public Post(String title, String contents) {
+    public Post(String title, String content) {
         this.title = title;
-        this.contents = contents;
+        this.content = content;
     }
 
 }

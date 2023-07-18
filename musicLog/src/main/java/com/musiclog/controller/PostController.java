@@ -2,18 +2,17 @@ package com.musiclog.controller;
 
 import com.musiclog.domain.Post;
 import com.musiclog.request.PostCreate;
+import com.musiclog.request.PostSearch;
 import com.musiclog.response.PostResponse;
 import com.musiclog.service.PostService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Slf4j
 @RestController
@@ -42,18 +41,20 @@ public class PostController {
      * /posts/{postId} -> 글 한개만 조회
      */
     @GetMapping("/posts/{postId}")
-    public PostResponse get(@PathVariable(name = "postId")Long id) {
+    public PostResponse get(@PathVariable Long postId) {
 
-        //Request 클래스
-        //Response 클래스
-
-        PostResponse response = postService.get(id);
-
-        return response;
+        return postService.get(postId);
     }
 
+    //조회 API
+    //지난 시간 = 단건 조회 API (1개의 글 post를 가져오는 기능)
+    //여러개의 글을 조회 API
+    // /posts
 
-
+    @GetMapping("/posts")
+    public List<PostResponse> getList(@ModelAttribute PostSearch postSearch){
+        return postService.getList(postSearch);
+    }
 
 
 
