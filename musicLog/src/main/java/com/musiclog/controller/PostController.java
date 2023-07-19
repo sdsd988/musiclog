@@ -1,6 +1,7 @@
 package com.musiclog.controller;
 
 import com.musiclog.domain.Post;
+import com.musiclog.exception.InvalidRequest;
 import com.musiclog.request.PostCreate;
 import com.musiclog.request.PostEdit;
 import com.musiclog.request.PostSearch;
@@ -34,6 +35,7 @@ public class PostController {
     public void post(@RequestBody @Valid PostCreate request)  {
         //Case1. 저장한 데이터 Entity -> response로 응답하기
         //Case2. 저장한 데이터의 primary_id -> response로 응답하기
+        request.validate();
          postService.write(request);
     }
 

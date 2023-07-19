@@ -7,23 +7,17 @@ import com.musiclog.request.PostCreate;
 import com.musiclog.request.PostEdit;
 import com.musiclog.request.PostSearch;
 import com.musiclog.response.PostResponse;
-import org.aspectj.weaver.AjAttribute;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.springframework.data.domain.Sort.*;
 
 @SpringBootTest
 class PostServiceTest {
@@ -238,8 +232,8 @@ class PostServiceTest {
         PostNotFound e = assertThrows(PostNotFound.class, () -> {
             postService.edit(post.getId()+1L,postEdit);
         });
-        ;
-
     }
+
+
 
 }

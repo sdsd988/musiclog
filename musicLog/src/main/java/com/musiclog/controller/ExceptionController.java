@@ -1,8 +1,11 @@
 package com.musiclog.controller;
 
+import com.musiclog.exception.InvalidRequest;
+import com.musiclog.exception.MusiclogException;
 import com.musiclog.response.ErrorResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -29,4 +32,25 @@ public class ExceptionController {
         }
         return response;
     }
+
+    @ExceptionHandler(MusiclogException.class)
+    @ResponseBody
+    public ResponseEntity<ErrorResponse> musiclogException(MusiclogException e) {
+        int statusCode = e.getStatusCode();
+
+
+        ErrorResponse body = ErrorResponse.builder()
+                .code(String.valueOf(statusCode))
+                .message(e.getMessage())
+                .validation(e.getValidation())
+                .build();
+
+
+        ResponseEntity<ErrorResponse> response =  ResponseEntity.status(statusCode)
+                .body(body);
+
+        return response;
+    }
+
+
 }
