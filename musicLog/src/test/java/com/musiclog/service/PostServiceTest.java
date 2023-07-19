@@ -1,6 +1,7 @@
 package com.musiclog.service;
 
 import com.musiclog.domain.Post;
+import com.musiclog.exception.PostNotFound;
 import com.musiclog.repository.PostRepository;
 import com.musiclog.request.PostCreate;
 import com.musiclog.request.PostEdit;
@@ -176,6 +177,68 @@ class PostServiceTest {
 
         //then
         assertEquals(0, postRepository.count());
+
+    }
+
+    @Test
+    @DisplayName("글 1개 조회 - 존재하지 않는 글")
+    void test7() {
+
+        //given
+
+        Post post = Post.builder()
+                .title("루시")
+                .content("조깅")
+                .build();
+
+        postRepository.save(post);
+
+        //expected
+        PostNotFound e = assertThrows(PostNotFound.class, () -> {
+            postService.get(post.getId() + 1L);
+        });
+
+    }
+
+    @Test
+    @DisplayName("게시글 삭제 - 존재하지 않는 글")
+    void test8() {
+
+        //given
+        Post post = Post.builder()
+                .title("루시")
+                .content("조깅")
+                .build();
+
+        postRepository.save(post);
+
+
+        //expected
+        PostNotFound e = assertThrows(PostNotFound.class, () -> {
+            postService.delete(post.getId() + 1L);
+        });
+
+    }
+
+    @Test
+    @DisplayName("글 내용 수정 - 존재하지 않는 글")
+    void test9() {
+        //given
+        Post post = Post.builder().title("음악 제목")
+                .content("노래 소개")
+                .build();
+        postRepository.save(post);
+
+        PostEdit postEdit = PostEdit.builder()
+                .content("브로콜리")
+                .build();
+        //when
+
+
+        PostNotFound e = assertThrows(PostNotFound.class, () -> {
+            postService.edit(post.getId()+1L,postEdit);
+        });
+        ;
 
     }
 

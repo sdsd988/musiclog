@@ -2,6 +2,7 @@ package com.musiclog.service;
 
 import com.musiclog.domain.Post;
 import com.musiclog.domain.PostEditor;
+import com.musiclog.exception.PostNotFound;
 import com.musiclog.repository.PostRepository;
 import com.musiclog.request.PostCreate;
 import com.musiclog.request.PostEdit;
@@ -35,7 +36,7 @@ public class PostService {
     }
 
     public PostResponse get(Long id) {
-        Post post = postRepository.findById(id).orElseThrow(()->new IllegalArgumentException("존재하지 않는 글입니다."));
+        Post post = postRepository.findById(id).orElseThrow(PostNotFound::new);
 
 
         return PostResponse.builder()
@@ -61,7 +62,7 @@ public class PostService {
     @Transactional
     public void edit(Long id, PostEdit postEdit){
 
-       Post post =  postRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("존재하지 않는 글입니다."));
+       Post post =  postRepository.findById(id).orElseThrow(PostNotFound::new);
 
        PostEditor.PostEditorBuilder postEditorBuilder = post.toEditor();
 
@@ -77,7 +78,7 @@ public class PostService {
 
     public void delete(Long id) {
 
-        Post post = postRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("존재하지 않는 글입니다."));
+        Post post = postRepository.findById(id).orElseThrow(PostNotFound::new);
 
         postRepository.delete(post);
     }
