@@ -2,6 +2,7 @@ package com.musiclog.controller;
 
 import com.musiclog.domain.Post;
 import com.musiclog.request.PostCreate;
+import com.musiclog.request.PostEdit;
 import com.musiclog.request.PostSearch;
 import com.musiclog.response.PostResponse;
 import com.musiclog.service.PostService;
@@ -57,6 +58,15 @@ public class PostController {
     }
 
 
+    @PatchMapping("/posts/{postId}")
+    public void edit(@PathVariable Long postId, @RequestBody @Valid PostEdit request) {
+        postService.edit(postId, request);
+    }
+
+    @DeleteMapping("/posts/{postId}")
+    public void delete(@PathVariable Long postId) {
+        postService.delete(postId);
+    }
 
 
 }

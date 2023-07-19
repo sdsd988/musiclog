@@ -4,7 +4,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.musiclog.domain.Post;
 import com.musiclog.repository.PostRepository;
 import com.musiclog.request.PostCreate;
+import com.musiclog.request.PostEdit;
 import com.musiclog.service.PostService;
+import org.aspectj.lang.annotation.After;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -43,7 +46,7 @@ class PostControllerTest {
     @Autowired
     private PostService postService;
 
-    @BeforeEach
+    @AfterEach
     void clean(){
         postRepository.deleteAll();
     }
@@ -196,15 +199,57 @@ class PostControllerTest {
         postRepository.saveAll(requestPosts);
 
         //expected
-        mockMvc.perform(get("/posts?page=1&size=10")
+        mockMvc.perform(get("/posts?page=0&size=10")
                         .contentType(APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.length()", is(10)))
-                .andExpect(jsonPath("$[0].id").value(20))
+                    .andExpect(jsonPath("$[0].id").value(requestPosts.get(19).getId()))
                 .andExpect(jsonPath("$[0].title").value("음악 제목 19"))
                 .andExpect(jsonPath("$[0].content").value("노래 소개 19"))
                 .andDo(print());
     }
 
+    @Test
+    @DisplayName("글 제목 수정")
+    void test7() throws Exception {
+        //given
+        Post post = Post.builder().title("음악 제목")
+                .content("노래 소개")
+                .build();
+        postRepository.save(post);
+
+        PostEdit postEdit = PostEdit.builder()
+                .title("막차")
+                .content("노래 소개")
+                .build();
+
+        //expected
+        mockMvc.perform(patch("/posts/{postId}",post.getId())
+                        .contentType(APPLICATION_JSON)
+                        .content(new ObjectMapper().writeValueAsString(postEdit)))
+
+                .andExpect(status().isOk())
+                .andDo(print());
+    }
+
+
+    @Test
+    @DisplayName("게시글 삭제")
+    void test8() throws Exception {
+        //given
+        Post post = Post.builder()
+                .title("루시")
+                .content("조깅")
+                .build();
+
+        postRepository.save(post);
+
+        //expected
+
+        mockMvc.perform(delete("/posts/{postId}", post.getId())
+                        .contentType(APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andDo(print());
+    }
 
 }

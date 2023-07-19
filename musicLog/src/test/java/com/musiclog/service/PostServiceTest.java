@@ -3,6 +3,7 @@ package com.musiclog.service;
 import com.musiclog.domain.Post;
 import com.musiclog.repository.PostRepository;
 import com.musiclog.request.PostCreate;
+import com.musiclog.request.PostEdit;
 import com.musiclog.request.PostSearch;
 import com.musiclog.response.PostResponse;
 import org.aspectj.weaver.AjAttribute;
@@ -109,5 +110,73 @@ class PostServiceTest {
         assertEquals("음악 제목 19",posts.get(0).getTitle());
     }
 
+    @Test
+    @DisplayName("글 제목 수정")
+    void test4() {
+        //given
+        Post post = Post.builder().title("음악 제목")
+                .content("노래 소개")
+                .build();
+        postRepository.save(post);
+
+        PostEdit postEdit = PostEdit.builder()
+                .title("막차")
+                .content("노래 소개")
+                .build();
+        //when
+
+        postService.edit(post.getId(),postEdit);
+
+        //then
+
+        Post changePost = postRepository.findById(post.getId()).orElseThrow(() -> new RuntimeException("글이 존재하지 않습니다. id= " + post.getId()));
+
+        assertEquals("막차",changePost.getTitle());
+        assertEquals("노래 소개",changePost.getContent());
+    }
+
+    @Test
+    @DisplayName("글 내용 수정")
+    void test5() {
+        //given
+        Post post = Post.builder().title("음악 제목")
+                .content("노래 소개")
+                .build();
+        postRepository.save(post);
+
+        PostEdit postEdit = PostEdit.builder()
+                .content("브로콜리")
+                .build();
+        //when
+
+        postService.edit(post.getId(),postEdit);
+
+        //then
+
+        Post changePost = postRepository.findById(post.getId()).orElseThrow(() -> new RuntimeException("글이 존재하지 않습니다. id= " + post.getId()));
+
+        assertEquals("음악 제목",changePost.getTitle());
+        assertEquals("브로콜리",changePost.getContent());
+    }
+
+    @Test
+    @DisplayName("게시글 삭제")
+    void test6(){
+        //given
+        Post post = Post.builder()
+                .title("루시")
+                .content("조깅")
+                .build();
+
+        postRepository.save(post);
+
+        //when
+
+        postService.delete(post.getId());
+
+        //then
+        assertEquals(0, postRepository.count());
+
+    }
 
 }
