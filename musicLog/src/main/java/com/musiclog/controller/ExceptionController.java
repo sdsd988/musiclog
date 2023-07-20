@@ -1,6 +1,5 @@
 package com.musiclog.controller;
 
-import com.musiclog.exception.InvalidRequest;
 import com.musiclog.exception.MusiclogException;
 import com.musiclog.response.ErrorResponse;
 import lombok.extern.slf4j.Slf4j;

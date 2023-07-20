@@ -6,36 +6,31 @@ import com.musiclog.repository.PostRepository;
 import com.musiclog.request.PostCreate;
 import com.musiclog.request.PostEdit;
 import com.musiclog.service.PostService;
-import org.aspectj.lang.annotation.After;
-import org.hamcrest.Matchers;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.List;
-import java.util.regex.Matcher;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static org.hamcrest.Matchers.*;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.springframework.http.MediaType.*;
+import static org.hamcrest.Matchers.is;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @AutoConfigureMockMvc
 @SpringBootTest
 class PostControllerTest {
+
+    @Autowired
+    private ObjectMapper objectMapper;
 
     @Autowired
     private MockMvc mockMvc;
@@ -108,7 +103,6 @@ class PostControllerTest {
                 .content("내용입니다.")
                 .build();
 
-        ObjectMapper objectMapper = new ObjectMapper(); // 찾아볼 것
 
         String json = objectMapper.writeValueAsString(request);
 
@@ -292,7 +286,7 @@ class PostControllerTest {
                 .content("반포자이")
                 .build();
 
-        ObjectMapper objectMapper = new ObjectMapper(); // 찾아볼 것
+        ObjectMapper objectMapper = new ObjectMapper();
 
         String json = objectMapper.writeValueAsString(request);
 

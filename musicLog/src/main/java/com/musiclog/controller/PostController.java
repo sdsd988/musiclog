@@ -1,7 +1,5 @@
 package com.musiclog.controller;
 
-import com.musiclog.domain.Post;
-import com.musiclog.exception.InvalidRequest;
 import com.musiclog.request.PostCreate;
 import com.musiclog.request.PostEdit;
 import com.musiclog.request.PostSearch;
@@ -10,8 +8,6 @@ import com.musiclog.service.PostService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
