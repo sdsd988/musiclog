@@ -140,6 +140,7 @@ class PostServiceTest {
         postRepository.save(post);
 
         PostEdit postEdit = PostEdit.builder()
+                .title(null)
                 .content("브로콜리")
                 .build();
         //when
