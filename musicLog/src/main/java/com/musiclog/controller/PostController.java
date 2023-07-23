@@ -1,5 +1,6 @@
 package com.musiclog.controller;
 
+import com.musiclog.config.data.UserSession;
 import com.musiclog.request.PostCreate;
 import com.musiclog.request.PostEdit;
 import com.musiclog.request.PostSearch;
@@ -19,6 +20,19 @@ public class PostController {
 
     private final PostService postService;
 
+    @GetMapping("/foo")
+    public String foo(UserSession userSession){
+        log.info(">>> {}", userSession.name);
+        return userSession.name;
+
+    }
+
+    @GetMapping("/bar")
+    public String bar(UserSession userSession){
+        return "인증이 필요 없는 페이지";
+    }
+
+
 
     //데이터를 검증하는 이유
 
@@ -29,10 +43,15 @@ public class PostController {
     //5. 서버 개발자의 편안함을 위해서
     @PostMapping("/posts")
     public void post(@RequestBody @Valid PostCreate request)  {
-        //Case1. 저장한 데이터 Entity -> response로 응답하기
-        //Case2. 저장한 데이터의 primary_id -> response로 응답하기
-        request.validate();
-         postService.write(request);
+        //1. Get Parameter -> ??
+
+
+            request.validate();
+            postService.write(request);
+
+        //2. Post(body) value? - 엔티티 변화를 동반한다.
+        //3. Header
+
     }
 
     /**
