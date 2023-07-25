@@ -1,7 +1,13 @@
 package com.musiclog.config.data;
 
+import lombok.extern.java.Log;
+
 public class UserSession {
 
-    public String name;
+    public final Long id;
 
+
+    public UserSession(Long id) {
+        this.id = id;
+    }
 }
