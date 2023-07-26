@@ -21,17 +21,15 @@ public class PostController {
     private final PostService postService;
 
     @GetMapping("/foo")
-    public Long foo(UserSession userSession){
+    public Long foo(UserSession userSession) {
         log.info(">>> {}", userSession.id);
         return userSession.id;
-
     }
 
     @GetMapping("/bar")
-    public String bar(UserSession userSession){
+    public String bar(UserSession userSession) {
         return "인증이 필요 없는 페이지";
     }
-
 
 
     //데이터를 검증하는 이유
@@ -42,16 +40,9 @@ public class PostController {
     //4. DB에 값을 저장할 때 의도치 않은 오류가 발생할 수 있다.
     //5. 서버 개발자의 편안함을 위해서
     @PostMapping("/posts")
-    public void post(@RequestBody @Valid PostCreate request)  {
-        //1. Get Parameter -> ??
-
-
-            request.validate();
-            postService.write(request);
-
-        //2. Post(body) value? - 엔티티 변화를 동반한다.
-        //3. Header
-
+    public void post(@RequestBody @Valid PostCreate request) {
+        request.validate();
+        postService.write(request);
     }
 
     /**
@@ -70,7 +61,7 @@ public class PostController {
     // /posts
 
     @GetMapping("/posts")
-    public List<PostResponse> getList(@ModelAttribute PostSearch postSearch){
+    public List<PostResponse> getList(@ModelAttribute PostSearch postSearch) {
         return postService.getList(postSearch);
     }
 

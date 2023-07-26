@@ -1,6 +1,7 @@
 package com.musiclog.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.musiclog.domain.Session;
 import com.musiclog.domain.User;
 import com.musiclog.repository.SessionRepository;
 import com.musiclog.repository.UserRepository;
@@ -21,6 +22,7 @@ import java.util.regex.Matcher;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -51,8 +53,13 @@ class AuthControllerTest {
     @Test
     @DisplayName("로그인 성공")
     void test1() throws Exception {
-
         //given
+
+        userRepository.save(User.builder()
+                .name("정상윤")
+                .email("sdsd98987@gmail.com")
+                .password("1234")
+                .build());
 
 
         Login login = Login.builder()
@@ -98,7 +105,7 @@ class AuthControllerTest {
                 .andExpect(status().isOk())
                 .andDo(print());
 
-        User loggedInUser = userRepository.findById(user.getId()).orElseThrow(() -> new RuntimeException());
+//        User loggedInUser = userRepository.findById(user.getId()).orElseThrow(() -> new RuntimeException());
         Assertions.assertEquals(1L, user.getSessions().size());
     }
 
@@ -131,4 +138,47 @@ class AuthControllerTest {
 
     }
 
+    @Test
+    @DisplayName("로그인 후 권한이 필요한 페이지 접속한다. /foo")
+    void test4() throws Exception {
+        //given
+        User user = User.builder()
+                .name("정상윤")
+                .email("sdsd98987@gmail.com")
+                .password("1234")
+                .build();
+
+        Session session = user.addSession();
+        userRepository.save(user);
+
+        //expected
+        mockMvc.perform(get("/foo")
+                        .header("Authorization", session.getAccessToken())
+                        .contentType(APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andDo(print());
+
+    }
+
+    @Test
+    @DisplayName("로그인 후 검증되지 않은 세션값으로 권한이 필요한 페이지에 접속할 수 없다.")
+    void test5() throws Exception {
+        //given
+        User user = User.builder()
+                .name("정상윤")
+                .email("sdsd98987@gmail.com")
+                .password("1234")
+                .build();
+
+        Session session = user.addSession();
+        userRepository.save(user);
+
+        //expected
+        mockMvc.perform(get("/foo")
+                        .header("Authorization", session.getAccessToken()+ "-other")
+                        .contentType(APPLICATION_JSON))
+                .andExpect(status().isUnauthorized())
+                .andDo(print());
+
+    }
 }
