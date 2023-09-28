@@ -38,37 +38,56 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+	implementation 'org.springframework.security:spring-security-crypto'
+
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.security:spring-security-test'
+	implementation 'org.springframework.session:spring-session-jdbc'
+
+	implementation 'org.bouncycastle:bcprov-jdk15on:1.70'
+
 	implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
 	annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jakarta"
 	annotationProcessor "jakarta.annotation:jakarta.annotation-api"
 	annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
 
 	asciidoctorExt "org.springframework.restdocs:spring-restdocs-asciidoctor:${asciidocVersion}"
 	testImplementation "org.springframework.restdocs:spring-restdocs-mockmvc:${asciidocVersion}"
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+useJUnitPlatform()
 }
 
 
 test {
-	outputs.dir snippetsDir
+outputs.dir snippetsDir
 }
 
 asciidoctor {
-	inputs.dir snippetsDir
-	configurations 'asciidoctorExt'
-	dependsOn test
+inputs.dir snippetsDir
+configurations 'asciidoctorExt'
+dependsOn test
 }
 
 bootJar {
-	dependsOn asciidoctor
+	enabled = true
 
-	copy{
-		from asciidoctor.outputDir
-		into "src/main/resources/static/docs"
-	}
+dependsOn asciidoctor
 
+copy{
+    from asciidoctor.outputDir
+    into "src/main/resources/static/docs"
+}
+
+
+}
+
+jar {
+	enabled = false
 
 }

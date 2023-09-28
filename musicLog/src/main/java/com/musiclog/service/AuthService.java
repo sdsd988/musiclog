@@ -1,27 +1,38 @@
 package com.musiclog.service;
 
-import com.musiclog.domain.Session;
+import com.musiclog.crypto.PasswordEncoder;
 import com.musiclog.domain.User;
-import com.musiclog.exception.InvalidSigninInformation;
+import com.musiclog.exception.AlreadyExistsEmailException;
 import com.musiclog.repository.UserRepository;
-import com.musiclog.request.Login;
+import com.musiclog.request.Signup;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class AuthService {
 
+
     private final UserRepository userRepository;
 
-    @Transactional
-    public String signIn(Login login) {
-        User user =  userRepository.findByEmailAndPassword(login.getEmail(), login.getPassword())
-                .orElseThrow(InvalidSigninInformation::new);
 
-        Session session = user.addSession();
 
-        return session.getAccessToken();
+    public void signup(Signup signup) {
+        Optional<User> userOptional = userRepository.findByEmail(signup.getEmail());
+        if (userOptional.isPresent()) {
+            throw new AlreadyExistsEmailException();
+        }
+
+        PasswordEncoder encoder = new PasswordEncoder();
+        String encryptedPassword = encoder.encrpyt(signup.getPassword());
+
+        var user = User.builder()
+                .email(signup.getEmail())
+                .password(encryptedPassword)
+                .name(signup.getName())
+                .build();
+        userRepository.save(user);
     }
 }

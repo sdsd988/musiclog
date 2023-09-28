@@ -1,4 +1,4 @@
-package com.musiclog.repository;
+package com.musiclog.repository.post;
 
 import com.musiclog.domain.Post;
 import org.springframework.data.jpa.repository.JpaRepository;

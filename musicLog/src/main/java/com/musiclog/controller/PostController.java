@@ -1,9 +1,8 @@
 package com.musiclog.controller;
 
-import com.musiclog.config.data.UserSession;
-import com.musiclog.request.PostCreate;
-import com.musiclog.request.PostEdit;
-import com.musiclog.request.PostSearch;
+import com.musiclog.request.post.PostCreate;
+import com.musiclog.request.post.PostEdit;
+import com.musiclog.request.post.PostSearch;
 import com.musiclog.response.PostResponse;
 import com.musiclog.service.PostService;
 import jakarta.validation.Valid;
@@ -19,17 +18,6 @@ import java.util.List;
 public class PostController {
 
     private final PostService postService;
-
-    @GetMapping("/foo")
-    public Long foo(UserSession userSession) {
-        log.info(">>> {}", userSession.id);
-        return userSession.id;
-    }
-
-    @GetMapping("/bar")
-    public String bar(UserSession userSession) {
-        return "인증이 필요 없는 페이지";
-    }
 
 
     //데이터를 검증하는 이유

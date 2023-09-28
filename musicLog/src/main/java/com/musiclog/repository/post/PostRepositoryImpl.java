@@ -1,8 +1,7 @@
-package com.musiclog.repository;
+package com.musiclog.repository.post;
 
 import com.musiclog.domain.Post;
-import com.musiclog.domain.QPost;
-import com.musiclog.request.PostSearch;
+import com.musiclog.request.post.PostSearch;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 

@@ -1,4 +1,4 @@
-package com.musiclog.request;
+package com.musiclog.request.post;
 
 import com.musiclog.exception.InvalidRequest;
 import jakarta.validation.constraints.NotBlank;

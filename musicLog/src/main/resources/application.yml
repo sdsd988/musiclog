@@ -6,7 +6,7 @@ spring:
 
 
   datasource:
-    url: jdbc:h2:mem:musiclog
+    url: jdbc:h2:mem:musiclog:NON_KEYWORDS=USER
     username: sa
     password:
     driver-class-name: org.h2.Driver
@@ -14,7 +14,9 @@ spring:
   jpa:
     defer-datasource-initialization: true
   sql:
-    init-mode: always
+    init-model: always
+
+
 
 
 

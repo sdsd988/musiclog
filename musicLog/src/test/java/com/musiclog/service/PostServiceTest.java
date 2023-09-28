@@ -2,10 +2,10 @@ package com.musiclog.service;
 
 import com.musiclog.domain.Post;
 import com.musiclog.exception.PostNotFound;
-import com.musiclog.repository.PostRepository;
-import com.musiclog.request.PostCreate;
-import com.musiclog.request.PostEdit;
-import com.musiclog.request.PostSearch;
+import com.musiclog.repository.post.PostRepository;
+import com.musiclog.request.post.PostCreate;
+import com.musiclog.request.post.PostEdit;
+import com.musiclog.request.post.PostSearch;
 import com.musiclog.response.PostResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

@@ -1,4 +1,4 @@
-package com.musiclog.request;
+package com.musiclog.request.post;
 
 import lombok.Builder;
 import lombok.Data;

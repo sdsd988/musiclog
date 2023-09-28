@@ -2,8 +2,8 @@ package com.musiclog.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.musiclog.domain.Post;
-import com.musiclog.repository.PostRepository;
-import com.musiclog.request.PostCreate;
+import com.musiclog.repository.post.PostRepository;
+import com.musiclog.request.post.PostCreate;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -13,7 +13,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.restdocs.RestDocumentationExtension;
 import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
-import org.springframework.restdocs.payload.JsonFieldType;
 import org.springframework.restdocs.payload.PayloadDocumentation;
 import org.springframework.test.web.servlet.MockMvc;
 

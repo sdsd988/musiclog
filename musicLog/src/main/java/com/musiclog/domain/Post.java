@@ -2,6 +2,7 @@ package com.musiclog.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import java.util.*;
 
 @Entity
 @Getter
@@ -15,6 +16,9 @@ public class Post {
 
     @Lob
     private String content;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "post")
+    private List<Comment> comments;
 
 
     @Builder
@@ -33,5 +37,9 @@ public class Post {
     public void edit(PostEditor postEditor) {
         title = postEditor.getTitle();
         content = postEditor.getContent();
+    }
+
+    public void addComment(Comment comment) {
+        this.comments.add(comment);
     }
 }

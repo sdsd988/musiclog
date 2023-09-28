@@ -3,16 +3,13 @@ package com.musiclog.service;
 import com.musiclog.domain.Post;
 import com.musiclog.domain.PostEditor;
 import com.musiclog.exception.PostNotFound;
-import com.musiclog.repository.PostRepository;
-import com.musiclog.request.PostCreate;
-import com.musiclog.request.PostEdit;
-import com.musiclog.request.PostSearch;
+import com.musiclog.repository.post.PostRepository;
+import com.musiclog.request.post.PostCreate;
+import com.musiclog.request.post.PostEdit;
+import com.musiclog.request.post.PostSearch;
 import com.musiclog.response.PostResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -32,7 +29,7 @@ public class PostService {
                 .content(postCreate.getContent())
                 .build();
 
-         postRepository.save(post);
+        postRepository.save(post);
     }
 
     public PostResponse get(Long id) {
