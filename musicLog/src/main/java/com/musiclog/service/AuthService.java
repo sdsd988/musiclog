@@ -1,11 +1,11 @@
 package com.musiclog.service;
 
-import com.musiclog.crypto.PasswordEncoder;
 import com.musiclog.domain.User;
 import com.musiclog.exception.AlreadyExistsEmailException;
 import com.musiclog.repository.UserRepository;
 import com.musiclog.request.Signup;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -16,6 +16,7 @@ public class AuthService {
 
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
 
 
@@ -25,8 +26,7 @@ public class AuthService {
             throw new AlreadyExistsEmailException();
         }
 
-        PasswordEncoder encoder = new PasswordEncoder();
-        String encryptedPassword = encoder.encrpyt(signup.getPassword());
+        String encryptedPassword = passwordEncoder.encode(signup.getPassword());
 
         var user = User.builder()
                 .email(signup.getEmail())
