@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+export NODE_PATH='/Users/jeongsang-yun/Documents/GitHub/musiclog/musicLog/list/lib/node_modules'
+export NPM_CONFIG_PREFIX='/Users/jeongsang-yun/Documents/GitHub/musiclog/musicLog/list'
+export npm_config_prefix='/Users/jeongsang-yun/Documents/GitHub/musiclog/musicLog/list'
+exec 'list/bin/node' "$@"

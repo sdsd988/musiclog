@@ -1,0 +1,5 @@
+[source,bash]
+----
+$ curl 'https://api.musiclog.com/posts/1' -i -X GET \
+    -H 'Accept: application/json'
+----

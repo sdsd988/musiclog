@@ -1,0 +1,6 @@
+[source,bash]
+----
+$ echo '{"title":"제목","content":"내용"}' | http POST 'https://api.musiclog.com/posts' \
+    'Content-Type:application/json;charset=UTF-8' \
+    'Accept:application/json'
+----

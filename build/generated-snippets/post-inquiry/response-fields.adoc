@@ -1,0 +1,16 @@
+|===
+|Path|Type|Description
+
+|`+id+`
+|`+Number+`
+|게시글 ID
+
+|`+title+`
+|`+String+`
+|제목
+
+|`+content+`
+|`+String+`
+|내용
+
+|===

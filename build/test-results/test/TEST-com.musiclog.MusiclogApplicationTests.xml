@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.musiclog.MusiclogApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-26T17:27:50" hostname="jeongsang-yun-ui-MacBookAir.local" time="0.002">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.musiclog.MusiclogApplicationTests" time="0.002"/>
+  <system-out><![CDATA[2023-09-27T02:27:50.302+09:00  INFO 38434 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.musiclog.MusiclogApplicationTests]: MusiclogApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-09-27T02:27:50.310+09:00  INFO 38434 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.musiclog.MusiclogApplication for test class com.musiclog.MusiclogApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.1)
+
+2023-09-27T02:27:50.348+09:00  INFO 38434 --- [    Test worker] com.musiclog.MusiclogApplicationTests    : Starting MusiclogApplicationTests using Java 17.0.7 with PID 38434 (started by jeongsang-yun in /Users/jeongsang-yun/Documents/GitHub/musiclog/musicLog)
+2023-09-27T02:27:50.348+09:00  INFO 38434 --- [    Test worker] com.musiclog.MusiclogApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2023-09-27T02:27:50.602+09:00  INFO 38434 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-27T02:27:50.622+09:00  INFO 38434 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 3 JPA repository interfaces.
+2023-09-27T02:27:50.693+09:00  INFO 38434 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-09-27T02:27:50.694+09:00  INFO 38434 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:musiclog:NON_KEYWORDS=USER user=SA
+2023-09-27T02:27:50.694+09:00  INFO 38434 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-09-27T02:27:50.696+09:00  INFO 38434 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-27T02:27:50.708+09:00  INFO 38434 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-27T02:27:50.708+09:00  INFO 38434 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-27T02:27:50.725+09:00  INFO 38434 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-27T02:27:50.764+09:00  INFO 38434 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-27T02:27:50.770+09:00  INFO 38434 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-27T02:27:50.880+09:00  WARN 38434 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-27T02:27:50.952+09:00  INFO 38434 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:musiclog:NON_KEYWORDS=USER'
+2023-09-27T02:27:50.973+09:00  INFO 38434 --- [    Test worker] com.musiclog.MusiclogApplicationTests    : Started MusiclogApplicationTests in 0.659 seconds (process running for 7.121)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

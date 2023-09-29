@@ -1,0 +1,4 @@
+[source,json,options="nowrap"]
+----
+{"id":1,"title":"제목","content":"내용"}
+----

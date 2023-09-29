@@ -1,0 +1,8 @@
+.+/posts/{postId}+
+|===
+|Parameter|Description
+
+|`+postId+`
+|게시글 ID
+
+|===

@@ -1,0 +1,7 @@
+[source,bash]
+----
+$ curl 'https://api.musiclog.com/posts' -i -X POST \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -H 'Accept: application/json' \
+    -d '{"title":"제목","content":"내용"}'
+----
