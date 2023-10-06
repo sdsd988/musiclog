@@ -29,6 +29,8 @@ public class User {
 
     private LocalDateTime createdAt;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Post> posts;
 
 
     @Builder

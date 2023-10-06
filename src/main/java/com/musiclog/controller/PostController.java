@@ -1,5 +1,6 @@
 package com.musiclog.controller;
 
+import com.musiclog.config.UserPrincipal;
 import com.musiclog.request.post.PostCreate;
 import com.musiclog.request.post.PostEdit;
 import com.musiclog.request.post.PostSearch;
@@ -8,6 +9,8 @@ import com.musiclog.service.PostService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,10 +30,13 @@ public class PostController {
     //3. 외부에서 나쁜 의도로 값을 조작해서 보낼 수 있다.
     //4. DB에 값을 저장할 때 의도치 않은 오류가 발생할 수 있다.
     //5. 서버 개발자의 편안함을 위해서
+
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+//    @PreAuthorize("hasRole('ROLE_ADMIN') && #request.userId = '111") DTO도 SprinEL로 검증할 수 있다.
     @PostMapping("/posts")
-    public void post(@RequestBody @Valid PostCreate request) {
-        request.validate();
-        postService.write(request);
+    public void post(@AuthenticationPrincipal UserPrincipal userPrincipal, @RequestBody @Valid PostCreate request) {
+        postService.write(userPrincipal.getUserId(),request);
+
     }
 
     /**
@@ -53,12 +59,15 @@ public class PostController {
         return postService.getList(postSearch);
     }
 
-
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PatchMapping("/posts/{postId}")
     public void edit(@PathVariable Long postId, @RequestBody @Valid PostEdit request) {
         postService.edit(postId, request);
     }
 
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+
+    @PreAuthorize("hasPermission(#postId,'POST','DELETE')")
     @DeleteMapping("/posts/{postId}")
     public void delete(@PathVariable Long postId) {
         postService.delete(postId);

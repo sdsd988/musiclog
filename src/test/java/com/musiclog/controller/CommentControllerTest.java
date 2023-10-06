@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.List;
@@ -257,28 +258,6 @@ class CommentControllerTest {
                 .andDo(print());
     }
 
-    @Test
-    @DisplayName("게시글 작성시 제목에 '바보'는 포함될 수 없다.")
-    void test11() throws Exception {
 
-        PostCreate request = PostCreate.builder()
-                .title("나는 바보입니다")
-                .content("반포자이")
-                .build();
-
-        ObjectMapper objectMapper = new ObjectMapper();
-
-        String json = objectMapper.writeValueAsString(request);
-
-        //when
-        mockMvc.perform(post("/posts")
-                        .contentType(APPLICATION_JSON)
-                        .content(json)
-                )
-                .andExpect(status().isBadRequest())
-                .andDo(print());
-
-
-    }
 
 }

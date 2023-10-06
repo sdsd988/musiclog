@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">10</div>
+<div class="counter">9</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.170s</div>
+<div class="counter">0.222s</div>
 <p>duration</p>
 </div>
 </td>
@@ -81,61 +81,55 @@
 <tr>
 <td class="success">존재하지 않는 게시글 수정</td>
 <td class="success">test10()</td>
-<td class="success">0.014s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">게시글 작성시 제목에 '바보'는 포함될 수 없다.</td>
-<td class="success">test11()</td>
-<td class="success">0.011s</td>
+<td class="success">0.028s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">글 작성 요청 시 title 값은 필수다.</td>
 <td class="success">test2()</td>
-<td class="success">0.009s</td>
+<td class="success">0.010s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">글 작성 요청 시 DB에 값이 저장된다.</td>
+<td class="success">글 작성</td>
 <td class="success">test3()</td>
-<td class="success">0.011s</td>
+<td class="success">0.039s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">글 1개 조회</td>
 <td class="success">test4()</td>
-<td class="success">0.010s</td>
+<td class="success">0.016s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">글 여러개 조회</td>
 <td class="success">test5()</td>
-<td class="success">0.020s</td>
+<td class="success">0.018s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">글 여러개 조회 페이징</td>
 <td class="success">test6()</td>
-<td class="success">0.047s</td>
+<td class="success">0.053s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">글 제목 수정</td>
 <td class="success">test7()</td>
-<td class="success">0.012s</td>
+<td class="success">0.030s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">게시글 삭제</td>
 <td class="success">test8()</td>
-<td class="success">0.020s</td>
+<td class="success">0.018s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">존재하지 않는 게시글 조회</td>
 <td class="success">test9()</td>
-<td class="success">0.016s</td>
+<td class="success">0.010s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -143,8 +137,42 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2023-09-27T02:27:50.116+09:00  INFO 38434 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.musiclog.controller.PostControllerTest]: PostControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-09-27T02:27:50.118+09:00  INFO 38434 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.musiclog.MusiclogApplication for test class com.musiclog.controller.PostControllerTest
+<pre>2023-10-01T08:11:42.395+09:00  INFO 2067 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.musiclog.controller.PostControllerTest]: PostControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-10-01T08:11:42.404+09:00  INFO 2067 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.musiclog.MusiclogApplication for test class com.musiclog.controller.PostControllerTest
+2023-10-01T08:11:42.422+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+
+************************************************************
+
+Request received for PATCH '/posts/3':
+
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@58c48b92
+
+servletPath:
+pathInfo:/posts/3
+headers: 
+Content-Type: application/json;charset=UTF-8
+Content-Length: 44
+
+
+Security filter chain: [
+  DisableEncodeUrlFilter
+  WebAsyncManagerIntegrationFilter
+  SecurityContextHolderFilter
+  HeaderWriterFilter
+  LogoutFilter
+  EmailPasswordAuthFilter
+  RequestCacheAwareFilter
+  SecurityContextHolderAwareRequestFilter
+  RememberMeAuthenticationFilter
+  AnonymousAuthenticationFilter
+  ExceptionTranslationFilter
+  AuthorizationFilter
+]
+
+
+************************************************************
+
+
 
 MockHttpServletRequest:
       HTTP Method = PATCH
@@ -152,7 +180,7 @@ MockHttpServletRequest:
        Parameters = {}
           Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;, Content-Length:&quot;44&quot;]
              Body = {&quot;title&quot;:&quot;막차&quot;,&quot;content&quot;:&quot;노래 소개&quot;}
-    Session Attrs = {}
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sdsd98987@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_ADMIN]]]}
 
 Handler:
              Type = com.musiclog.controller.PostController
@@ -176,49 +204,46 @@ FlashMap:
 MockHttpServletResponse:
            Status = 404
     Error message = null
-          Headers = [Content-Type:&quot;application/json&quot;]
+          Headers = [Content-Type:&quot;application/json&quot;, X-Content-Type-Options:&quot;nosniff&quot;, X-XSS-Protection:&quot;0&quot;, Cache-Control:&quot;no-cache, no-store, max-age=0, must-revalidate&quot;, Pragma:&quot;no-cache&quot;, Expires:&quot;0&quot;, X-Frame-Options:&quot;DENY&quot;]
      Content type = application/json
              Body = {&quot;code&quot;:&quot;404&quot;,&quot;message&quot;:&quot;존재하지 않는 글입니다.&quot;,&quot;validation&quot;:{}}
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
+2023-10-01T08:11:42.442+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
 
-MockHttpServletRequest:
-      HTTP Method = POST
-      Request URI = /posts
-       Parameters = {}
-          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;, Content-Length:&quot;59&quot;]
-             Body = {&quot;title&quot;:&quot;나는 바보입니다&quot;,&quot;content&quot;:&quot;반포자이&quot;}
-    Session Attrs = {}
+************************************************************
 
-Handler:
-             Type = com.musiclog.controller.PostController
-           Method = com.musiclog.controller.PostController#post(PostCreate)
+Request received for POST '/posts':
 
-Async:
-    Async started = false
-     Async result = null
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@2936f48a
 
-Resolved Exception:
-             Type = com.musiclog.exception.InvalidRequest
+servletPath:
+pathInfo:/posts
+headers: 
+Content-Type: application/json;charset=UTF-8
+Content-Length: 43
 
-ModelAndView:
-        View name = null
-             View = null
-            Model = null
 
-FlashMap:
-       Attributes = null
+Security filter chain: [
+  DisableEncodeUrlFilter
+  WebAsyncManagerIntegrationFilter
+  SecurityContextHolderFilter
+  HeaderWriterFilter
+  LogoutFilter
+  EmailPasswordAuthFilter
+  RequestCacheAwareFilter
+  SecurityContextHolderAwareRequestFilter
+  RememberMeAuthenticationFilter
+  AnonymousAuthenticationFilter
+  ExceptionTranslationFilter
+  AuthorizationFilter
+]
 
-MockHttpServletResponse:
-           Status = 400
-    Error message = null
-          Headers = [Content-Type:&quot;application/json&quot;]
-     Content type = application/json
-             Body = {&quot;code&quot;:&quot;400&quot;,&quot;message&quot;:&quot;잘못된 요청입니다.&quot;,&quot;validation&quot;:{&quot;title&quot;:&quot;제목에 바보를 포함할 수 없습니다.&quot;}}
-    Forwarded URL = null
-   Redirected URL = null
-          Cookies = []
+
+************************************************************
+
+
 
 MockHttpServletRequest:
       HTTP Method = POST
@@ -250,12 +275,47 @@ FlashMap:
 MockHttpServletResponse:
            Status = 400
     Error message = null
-          Headers = [Content-Type:&quot;application/json&quot;]
+          Headers = [Content-Type:&quot;application/json&quot;, X-Content-Type-Options:&quot;nosniff&quot;, X-XSS-Protection:&quot;0&quot;, Cache-Control:&quot;no-cache, no-store, max-age=0, must-revalidate&quot;, Pragma:&quot;no-cache&quot;, Expires:&quot;0&quot;, X-Frame-Options:&quot;DENY&quot;]
      Content type = application/json
              Body = {&quot;code&quot;:&quot;400&quot;,&quot;message&quot;:&quot;잘못된 요청입니다.&quot;,&quot;validation&quot;:{&quot;title&quot;:&quot;타이틀을 입력해주세요!&quot;}}
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
+2023-10-01T08:11:42.453+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+
+************************************************************
+
+Request received for POST '/posts':
+
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@268bb09d
+
+servletPath:
+pathInfo:/posts
+headers: 
+Content-Type: application/json;charset=UTF-8
+authorization: sy
+Content-Length: 57
+
+
+Security filter chain: [
+  DisableEncodeUrlFilter
+  WebAsyncManagerIntegrationFilter
+  SecurityContextHolderFilter
+  HeaderWriterFilter
+  LogoutFilter
+  EmailPasswordAuthFilter
+  RequestCacheAwareFilter
+  SecurityContextHolderAwareRequestFilter
+  RememberMeAuthenticationFilter
+  AnonymousAuthenticationFilter
+  ExceptionTranslationFilter
+  AuthorizationFilter
+]
+
+
+************************************************************
+
+
 
 MockHttpServletRequest:
       HTTP Method = POST
@@ -263,7 +323,7 @@ MockHttpServletRequest:
        Parameters = {}
           Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;, authorization:&quot;sy&quot;, Content-Length:&quot;57&quot;]
              Body = {&quot;title&quot;:&quot;제목입니다.&quot;,&quot;content&quot;:&quot;내용입니다.&quot;}
-    Session Attrs = {}
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sdsd98987@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_ADMIN]]]}
 
 Handler:
              Type = com.musiclog.controller.PostController
@@ -287,16 +347,49 @@ FlashMap:
 MockHttpServletResponse:
            Status = 200
     Error message = null
-          Headers = []
+          Headers = [X-Content-Type-Options:&quot;nosniff&quot;, X-XSS-Protection:&quot;0&quot;, Cache-Control:&quot;no-cache, no-store, max-age=0, must-revalidate&quot;, Pragma:&quot;no-cache&quot;, Expires:&quot;0&quot;, X-Frame-Options:&quot;DENY&quot;]
      Content type = null
              Body = 
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
+2023-10-01T08:11:42.495+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+
+************************************************************
+
+Request received for GET '/posts/27':
+
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@6fab250b
+
+servletPath:
+pathInfo:/posts/27
+headers: 
+Content-Type: application/json;charset=UTF-8
+
+
+Security filter chain: [
+  DisableEncodeUrlFilter
+  WebAsyncManagerIntegrationFilter
+  SecurityContextHolderFilter
+  HeaderWriterFilter
+  LogoutFilter
+  EmailPasswordAuthFilter
+  RequestCacheAwareFilter
+  SecurityContextHolderAwareRequestFilter
+  RememberMeAuthenticationFilter
+  AnonymousAuthenticationFilter
+  ExceptionTranslationFilter
+  AuthorizationFilter
+]
+
+
+************************************************************
+
+
 
 MockHttpServletRequest:
       HTTP Method = GET
-      Request URI = /posts/4
+      Request URI = /posts/27
        Parameters = {}
           Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
              Body = null
@@ -324,12 +417,45 @@ FlashMap:
 MockHttpServletResponse:
            Status = 200
     Error message = null
-          Headers = [Content-Type:&quot;application/json&quot;]
+          Headers = [Content-Type:&quot;application/json&quot;, X-Content-Type-Options:&quot;nosniff&quot;, X-XSS-Protection:&quot;0&quot;, Cache-Control:&quot;no-cache, no-store, max-age=0, must-revalidate&quot;, Pragma:&quot;no-cache&quot;, Expires:&quot;0&quot;, X-Frame-Options:&quot;DENY&quot;]
      Content type = application/json
-             Body = {&quot;id&quot;:4,&quot;title&quot;:&quot;1234567890&quot;,&quot;content&quot;:&quot;bar&quot;}
+             Body = {&quot;id&quot;:27,&quot;title&quot;:&quot;1234567890&quot;,&quot;content&quot;:&quot;bar&quot;}
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
+2023-10-01T08:11:42.514+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+
+************************************************************
+
+Request received for GET '/posts?page=1&amp;size=10':
+
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@78d3578e
+
+servletPath:
+pathInfo:/posts
+headers: 
+Content-Type: application/json;charset=UTF-8
+
+
+Security filter chain: [
+  DisableEncodeUrlFilter
+  WebAsyncManagerIntegrationFilter
+  SecurityContextHolderFilter
+  HeaderWriterFilter
+  LogoutFilter
+  EmailPasswordAuthFilter
+  RequestCacheAwareFilter
+  SecurityContextHolderAwareRequestFilter
+  RememberMeAuthenticationFilter
+  AnonymousAuthenticationFilter
+  ExceptionTranslationFilter
+  AuthorizationFilter
+]
+
+
+************************************************************
+
+
 
 MockHttpServletRequest:
       HTTP Method = GET
@@ -361,12 +487,45 @@ FlashMap:
 MockHttpServletResponse:
            Status = 200
     Error message = null
-          Headers = [Content-Type:&quot;application/json&quot;]
+          Headers = [Content-Type:&quot;application/json&quot;, X-Content-Type-Options:&quot;nosniff&quot;, X-XSS-Protection:&quot;0&quot;, Cache-Control:&quot;no-cache, no-store, max-age=0, must-revalidate&quot;, Pragma:&quot;no-cache&quot;, Expires:&quot;0&quot;, X-Frame-Options:&quot;DENY&quot;]
      Content type = application/json
-             Body = [{&quot;id&quot;:6,&quot;title&quot;:&quot;title_2&quot;,&quot;content&quot;:&quot;content_2&quot;},{&quot;id&quot;:5,&quot;title&quot;:&quot;title_1&quot;,&quot;content&quot;:&quot;content_1&quot;}]
+             Body = [{&quot;id&quot;:29,&quot;title&quot;:&quot;title_2&quot;,&quot;content&quot;:&quot;content_2&quot;},{&quot;id&quot;:28,&quot;title&quot;:&quot;title_1&quot;,&quot;content&quot;:&quot;content_1&quot;}]
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
+2023-10-01T08:11:42.543+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+
+************************************************************
+
+Request received for GET '/posts?page=0&amp;size=10':
+
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@68bbd5c2
+
+servletPath:
+pathInfo:/posts
+headers: 
+Content-Type: application/json;charset=UTF-8
+
+
+Security filter chain: [
+  DisableEncodeUrlFilter
+  WebAsyncManagerIntegrationFilter
+  SecurityContextHolderFilter
+  HeaderWriterFilter
+  LogoutFilter
+  EmailPasswordAuthFilter
+  RequestCacheAwareFilter
+  SecurityContextHolderAwareRequestFilter
+  RememberMeAuthenticationFilter
+  AnonymousAuthenticationFilter
+  ExceptionTranslationFilter
+  AuthorizationFilter
+]
+
+
+************************************************************
+
+
 
 MockHttpServletRequest:
       HTTP Method = GET
@@ -398,20 +557,54 @@ FlashMap:
 MockHttpServletResponse:
            Status = 200
     Error message = null
-          Headers = [Content-Type:&quot;application/json&quot;]
+          Headers = [Content-Type:&quot;application/json&quot;, X-Content-Type-Options:&quot;nosniff&quot;, X-XSS-Protection:&quot;0&quot;, Cache-Control:&quot;no-cache, no-store, max-age=0, must-revalidate&quot;, Pragma:&quot;no-cache&quot;, Expires:&quot;0&quot;, X-Frame-Options:&quot;DENY&quot;]
      Content type = application/json
-             Body = [{&quot;id&quot;:26,&quot;title&quot;:&quot;음악 제목 19&quot;,&quot;content&quot;:&quot;노래 소개 19&quot;},{&quot;id&quot;:25,&quot;title&quot;:&quot;음악 제목 18&quot;,&quot;content&quot;:&quot;노래 소개 18&quot;},{&quot;id&quot;:24,&quot;title&quot;:&quot;음악 제목 17&quot;,&quot;content&quot;:&quot;노래 소개 17&quot;},{&quot;id&quot;:23,&quot;title&quot;:&quot;음악 제목 16&quot;,&quot;content&quot;:&quot;노래 소개 16&quot;},{&quot;id&quot;:22,&quot;title&quot;:&quot;음악 제목 15&quot;,&quot;content&quot;:&quot;노래 소개 15&quot;},{&quot;id&quot;:21,&quot;title&quot;:&quot;음악 제목 14&quot;,&quot;content&quot;:&quot;노래 소개 14&quot;},{&quot;id&quot;:20,&quot;title&quot;:&quot;음악 제목 13&quot;,&quot;content&quot;:&quot;노래 소개 13&quot;},{&quot;id&quot;:19,&quot;title&quot;:&quot;음악 제목 12&quot;,&quot;content&quot;:&quot;노래 소개 12&quot;},{&quot;id&quot;:18,&quot;title&quot;:&quot;음악 제목 11&quot;,&quot;content&quot;:&quot;노래 소개 11&quot;},{&quot;id&quot;:17,&quot;title&quot;:&quot;음악 제목 10&quot;,&quot;content&quot;:&quot;노래 소개 10&quot;}]
+             Body = [{&quot;id&quot;:49,&quot;title&quot;:&quot;음악 제목 19&quot;,&quot;content&quot;:&quot;노래 소개 19&quot;},{&quot;id&quot;:48,&quot;title&quot;:&quot;음악 제목 18&quot;,&quot;content&quot;:&quot;노래 소개 18&quot;},{&quot;id&quot;:47,&quot;title&quot;:&quot;음악 제목 17&quot;,&quot;content&quot;:&quot;노래 소개 17&quot;},{&quot;id&quot;:46,&quot;title&quot;:&quot;음악 제목 16&quot;,&quot;content&quot;:&quot;노래 소개 16&quot;},{&quot;id&quot;:45,&quot;title&quot;:&quot;음악 제목 15&quot;,&quot;content&quot;:&quot;노래 소개 15&quot;},{&quot;id&quot;:44,&quot;title&quot;:&quot;음악 제목 14&quot;,&quot;content&quot;:&quot;노래 소개 14&quot;},{&quot;id&quot;:43,&quot;title&quot;:&quot;음악 제목 13&quot;,&quot;content&quot;:&quot;노래 소개 13&quot;},{&quot;id&quot;:42,&quot;title&quot;:&quot;음악 제목 12&quot;,&quot;content&quot;:&quot;노래 소개 12&quot;},{&quot;id&quot;:41,&quot;title&quot;:&quot;음악 제목 11&quot;,&quot;content&quot;:&quot;노래 소개 11&quot;},{&quot;id&quot;:40,&quot;title&quot;:&quot;음악 제목 10&quot;,&quot;content&quot;:&quot;노래 소개 10&quot;}]
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
+2023-10-01T08:11:42.589+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+
+************************************************************
+
+Request received for PATCH '/posts/50':
+
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@9b5ff2e
+
+servletPath:
+pathInfo:/posts/50
+headers: 
+Content-Type: application/json;charset=UTF-8
+Content-Length: 44
+
+
+Security filter chain: [
+  DisableEncodeUrlFilter
+  WebAsyncManagerIntegrationFilter
+  SecurityContextHolderFilter
+  HeaderWriterFilter
+  LogoutFilter
+  EmailPasswordAuthFilter
+  RequestCacheAwareFilter
+  SecurityContextHolderAwareRequestFilter
+  RememberMeAuthenticationFilter
+  AnonymousAuthenticationFilter
+  ExceptionTranslationFilter
+  AuthorizationFilter
+]
+
+
+************************************************************
+
+
 
 MockHttpServletRequest:
       HTTP Method = PATCH
-      Request URI = /posts/27
+      Request URI = /posts/50
        Parameters = {}
           Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;, Content-Length:&quot;44&quot;]
              Body = {&quot;title&quot;:&quot;막차&quot;,&quot;content&quot;:&quot;노래 소개&quot;}
-    Session Attrs = {}
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sdsd98987@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_ADMIN]]]}
 
 Handler:
              Type = com.musiclog.controller.PostController
@@ -435,20 +628,53 @@ FlashMap:
 MockHttpServletResponse:
            Status = 200
     Error message = null
-          Headers = []
+          Headers = [X-Content-Type-Options:&quot;nosniff&quot;, X-XSS-Protection:&quot;0&quot;, Cache-Control:&quot;no-cache, no-store, max-age=0, must-revalidate&quot;, Pragma:&quot;no-cache&quot;, Expires:&quot;0&quot;, X-Frame-Options:&quot;DENY&quot;]
      Content type = null
              Body = 
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
+2023-10-01T08:11:42.619+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+
+************************************************************
+
+Request received for DELETE '/posts/51':
+
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@5bf963a
+
+servletPath:
+pathInfo:/posts/51
+headers: 
+Content-Type: application/json;charset=UTF-8
+
+
+Security filter chain: [
+  DisableEncodeUrlFilter
+  WebAsyncManagerIntegrationFilter
+  SecurityContextHolderFilter
+  HeaderWriterFilter
+  LogoutFilter
+  EmailPasswordAuthFilter
+  RequestCacheAwareFilter
+  SecurityContextHolderAwareRequestFilter
+  RememberMeAuthenticationFilter
+  AnonymousAuthenticationFilter
+  ExceptionTranslationFilter
+  AuthorizationFilter
+]
+
+
+************************************************************
+
+
 
 MockHttpServletRequest:
       HTTP Method = DELETE
-      Request URI = /posts/28
+      Request URI = /posts/51
        Parameters = {}
           Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
              Body = null
-    Session Attrs = {}
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sdsd98987@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_ADMIN]]]}
 
 Handler:
              Type = com.musiclog.controller.PostController
@@ -472,15 +698,48 @@ FlashMap:
 MockHttpServletResponse:
            Status = 200
     Error message = null
-          Headers = []
+          Headers = [X-Content-Type-Options:&quot;nosniff&quot;, X-XSS-Protection:&quot;0&quot;, Cache-Control:&quot;no-cache, no-store, max-age=0, must-revalidate&quot;, Pragma:&quot;no-cache&quot;, Expires:&quot;0&quot;, X-Frame-Options:&quot;DENY&quot;]
      Content type = null
              Body = 
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
+2023-10-01T08:11:42.636+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+
+************************************************************
+
+Request received for GET '/posts/1':
+
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@398f6f04
+
+servletPath:
+pathInfo:/posts/1
+headers: 
+Content-Type: application/json;charset=UTF-8
+
+
+Security filter chain: [
+  DisableEncodeUrlFilter
+  WebAsyncManagerIntegrationFilter
+  SecurityContextHolderFilter
+  HeaderWriterFilter
+  LogoutFilter
+  EmailPasswordAuthFilter
+  RequestCacheAwareFilter
+  SecurityContextHolderAwareRequestFilter
+  RememberMeAuthenticationFilter
+  AnonymousAuthenticationFilter
+  ExceptionTranslationFilter
+  AuthorizationFilter
+]
+
+
+************************************************************
+
+
 
 MockHttpServletRequest:
-      HTTP Method = DELETE
+      HTTP Method = GET
       Request URI = /posts/1
        Parameters = {}
           Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;]
@@ -489,7 +748,7 @@ MockHttpServletRequest:
 
 Handler:
              Type = com.musiclog.controller.PostController
-           Method = com.musiclog.controller.PostController#delete(Long)
+           Method = com.musiclog.controller.PostController#get(Long)
 
 Async:
     Async started = false
@@ -509,7 +768,7 @@ FlashMap:
 MockHttpServletResponse:
            Status = 404
     Error message = null
-          Headers = [Content-Type:&quot;application/json&quot;]
+          Headers = [Content-Type:&quot;application/json&quot;, X-Content-Type-Options:&quot;nosniff&quot;, X-XSS-Protection:&quot;0&quot;, Cache-Control:&quot;no-cache, no-store, max-age=0, must-revalidate&quot;, Pragma:&quot;no-cache&quot;, Expires:&quot;0&quot;, X-Frame-Options:&quot;DENY&quot;]
      Content type = application/json
              Body = {&quot;code&quot;:&quot;404&quot;,&quot;message&quot;:&quot;존재하지 않는 글입니다.&quot;,&quot;validation&quot;:{}}
     Forwarded URL = null
@@ -526,7 +785,7 @@ MockHttpServletResponse:
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.1.1</a> at Sep 27, 2023, 2:27:51 AM</p>
+<a href="http://www.gradle.org">Gradle 8.1.1</a> at Oct 1, 2023, 8:11:44 AM</p>
 </div>
 </div>
 </body>

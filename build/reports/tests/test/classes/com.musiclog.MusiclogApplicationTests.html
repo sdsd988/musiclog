@@ -87,8 +87,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2023-09-27T02:27:50.302+09:00  INFO 38434 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.musiclog.MusiclogApplicationTests]: MusiclogApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-09-27T02:27:50.310+09:00  INFO 38434 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.musiclog.MusiclogApplication for test class com.musiclog.MusiclogApplicationTests
+<pre>2023-10-01T08:11:42.646+09:00  INFO 2067 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.musiclog.MusiclogApplicationTests]: MusiclogApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-10-01T08:11:42.653+09:00  INFO 2067 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.musiclog.MusiclogApplication for test class com.musiclog.MusiclogApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -98,22 +98,38 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.1)
 
-2023-09-27T02:27:50.348+09:00  INFO 38434 --- [    Test worker] com.musiclog.MusiclogApplicationTests    : Starting MusiclogApplicationTests using Java 17.0.7 with PID 38434 (started by jeongsang-yun in /Users/jeongsang-yun/Documents/GitHub/musiclog/musicLog)
-2023-09-27T02:27:50.348+09:00  INFO 38434 --- [    Test worker] com.musiclog.MusiclogApplicationTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2023-09-27T02:27:50.602+09:00  INFO 38434 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-27T02:27:50.622+09:00  INFO 38434 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 3 JPA repository interfaces.
-2023-09-27T02:27:50.693+09:00  INFO 38434 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2023-09-27T02:27:50.694+09:00  INFO 38434 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:musiclog:NON_KEYWORDS=USER user=SA
-2023-09-27T02:27:50.694+09:00  INFO 38434 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
-2023-09-27T02:27:50.696+09:00  INFO 38434 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-09-27T02:27:50.708+09:00  INFO 38434 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-27T02:27:50.708+09:00  INFO 38434 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-09-27T02:27:50.725+09:00  INFO 38434 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-27T02:27:50.764+09:00  INFO 38434 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-09-27T02:27:50.770+09:00  INFO 38434 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-27T02:27:50.880+09:00  WARN 38434 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-27T02:27:50.952+09:00  INFO 38434 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:musiclog:NON_KEYWORDS=USER'
-2023-09-27T02:27:50.973+09:00  INFO 38434 --- [    Test worker] com.musiclog.MusiclogApplicationTests    : Started MusiclogApplicationTests in 0.659 seconds (process running for 7.121)
+2023-10-01T08:11:42.683+09:00  INFO 2067 --- [    Test worker] com.musiclog.MusiclogApplicationTests    : Starting MusiclogApplicationTests using Java 17.0.7 with PID 2067 (started by jeongsang-yun in /Users/jeongsang-yun/Documents/GitHub/musiclog)
+2023-10-01T08:11:42.684+09:00  INFO 2067 --- [    Test worker] com.musiclog.MusiclogApplicationTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-10-01T08:11:42.842+09:00  INFO 2067 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-01T08:11:42.859+09:00  INFO 2067 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 3 JPA repository interfaces.
+2023-10-01T08:11:42.957+09:00  INFO 2067 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-10-01T08:11:42.958+09:00  INFO 2067 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:musiclog:NON_KEYWORDS=USER user=SA
+2023-10-01T08:11:42.958+09:00  INFO 2067 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-10-01T08:11:42.959+09:00  INFO 2067 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-01T08:11:42.964+09:00  INFO 2067 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-01T08:11:42.964+09:00  INFO 2067 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-01T08:11:42.976+09:00  INFO 2067 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-01T08:11:43.015+09:00  INFO 2067 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-01T08:11:43.022+09:00  INFO 2067 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-01T08:11:43.224+09:00  WARN 2067 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-01T08:11:43.279+09:00  INFO 2067 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1b320c39, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e0e1acf, org.springframework.security.web.context.SecurityContextHolderFilter@7c2b2b56, org.springframework.security.web.header.HeaderWriterFilter@24028f51, org.springframework.security.web.authentication.logout.LogoutFilter@486bd746, com.musiclog.config.filter.EmailPasswordAuthFilter@6018ff75, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@26420ed1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5df744d4, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@df52b26, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4d05b931, org.springframework.security.web.access.ExceptionTranslationFilter@180c785d, org.springframework.security.web.access.intercept.AuthorizationFilter@195f46f1]
+2023-10-01T08:11:43.333+09:00  WARN 2067 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/favicon.ico']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-10-01T08:11:43.333+09:00  INFO 2067 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Mvc [pattern='/favicon.ico']
+2023-10-01T08:11:43.333+09:00  WARN 2067 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/error']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-10-01T08:11:43.333+09:00  INFO 2067 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Mvc [pattern='/error']
+2023-10-01T08:11:43.333+09:00  WARN 2067 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore org.springframework.boot.autoconfigure.security.servlet.PathRequest$H2ConsoleRequestMatcher@615c9e9b. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-10-01T08:11:43.333+09:00  INFO 2067 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure org.springframework.boot.autoconfigure.security.servlet.PathRequest$H2ConsoleRequestMatcher@615c9e9b
+2023-10-01T08:11:43.333+09:00  WARN 2067 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : 
+
+********************************************************************
+**********        Security debugging is enabled.       *************
+**********    This may include sensitive information.  *************
+**********      Do not use in a production system!     *************
+********************************************************************
+
+
+2023-10-01T08:11:43.401+09:00  INFO 2067 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:musiclog:NON_KEYWORDS=USER'
+2023-10-01T08:11:43.440+09:00  INFO 2067 --- [    Test worker] com.musiclog.MusiclogApplicationTests    : Started MusiclogApplicationTests in 0.782 seconds (process running for 7.139)
 </pre>
 </span>
 </div>
@@ -125,7 +141,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.1.1</a> at Sep 27, 2023, 2:27:51 AM</p>
+<a href="http://www.gradle.org">Gradle 8.1.1</a> at Oct 1, 2023, 8:11:44 AM</p>
 </div>
 </div>
 </body>

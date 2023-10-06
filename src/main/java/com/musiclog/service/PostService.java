@@ -3,6 +3,8 @@ package com.musiclog.service;
 import com.musiclog.domain.Post;
 import com.musiclog.domain.PostEditor;
 import com.musiclog.exception.PostNotFound;
+import com.musiclog.exception.UserNotFound;
+import com.musiclog.repository.UserRepository;
 import com.musiclog.repository.post.PostRepository;
 import com.musiclog.request.post.PostCreate;
 import com.musiclog.request.post.PostEdit;
@@ -10,6 +12,7 @@ import com.musiclog.request.post.PostSearch;
 import com.musiclog.response.PostResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,12 +24,18 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class PostService {
 
+    private final UserRepository userRepository;
     private final PostRepository postRepository;
 
-    public void write(PostCreate postCreate){
+    public void write(Long userId, PostCreate postCreate){
+
+        var user = userRepository.findById(userId)
+                .orElseThrow(UserNotFound::new);
+
         Post post = Post.builder()
                 .title(postCreate.getTitle())
                 .content(postCreate.getContent())
+                .user(user)
                 .build();
 
         postRepository.save(post);
