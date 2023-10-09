@@ -1,9 +1,12 @@
 package com.musiclog.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.musiclog.config.MusiclogMockUser;
 import com.musiclog.domain.Post;
+import com.musiclog.repository.UserRepository;
 import com.musiclog.repository.post.PostRepository;
 import com.musiclog.request.post.PostCreate;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -44,6 +47,15 @@ public class PostControllerDocTest {
     @Autowired
     private PostRepository postRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
+    @AfterEach
+    void clean(){
+        postRepository.deleteAll();
+        userRepository.deleteAll();
+    }
+
 
     @Test
     @DisplayName("글 단건 조회")
@@ -74,8 +86,7 @@ public class PostControllerDocTest {
     }
 
     @Test
-    @WithMockUser(username = "sdsd98987@gmail.com" ,
-            roles = {"ADMIN"})
+    @MusiclogMockUser
     @DisplayName("글 등록")
     void test2() throws Exception {
 

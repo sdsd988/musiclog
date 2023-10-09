@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.musiclog.controller.CommentControllerTest" tests="9" skipped="0" failures="5" errors="0" timestamp="2023-09-30T23:11:41" hostname="jeongsang-yun-ui-MacBookAir.local" time="1.115">
+<testsuite name="com.musiclog.controller.CommentControllerTest" tests="9" skipped="0" failures="5" errors="0" timestamp="2023-10-08T12:31:56" hostname="jeongsang-yun-ui-MacBookAir.local" time="1.343">
   <properties/>
-  <testcase name="존재하지 않는 게시글 수정" classname="com.musiclog.controller.CommentControllerTest" time="0.615">
+  <testcase name="존재하지 않는 게시글 수정" classname="com.musiclog.controller.CommentControllerTest" time="0.59">
     <failure message="java.lang.AssertionError: Status expected:&lt;404&gt; but was:&lt;401&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Status expected:&lt;404&gt; but was:&lt;401&gt;
 	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
 	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
@@ -94,8 +94,8 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="글 작성 요청 시 title 값은 필수다." classname="com.musiclog.controller.CommentControllerTest" time="0.059"/>
-  <testcase name="글 작성 요청 시 DB에 값이 저장된다." classname="com.musiclog.controller.CommentControllerTest" time="0.026">
+  <testcase name="글 작성 요청 시 title 값은 필수다." classname="com.musiclog.controller.CommentControllerTest" time="0.086"/>
+  <testcase name="글 작성 요청 시 DB에 값이 저장된다." classname="com.musiclog.controller.CommentControllerTest" time="0.042">
     <failure message="java.lang.AssertionError: Status expected:&lt;200&gt; but was:&lt;401&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Status expected:&lt;200&gt; but was:&lt;401&gt;
 	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
 	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
@@ -188,10 +188,10 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="글 1개 조회" classname="com.musiclog.controller.CommentControllerTest" time="0.114"/>
-  <testcase name="글 여러개 조회" classname="com.musiclog.controller.CommentControllerTest" time="0.198"/>
-  <testcase name="글 여러개 조회 페이징" classname="com.musiclog.controller.CommentControllerTest" time="0.038"/>
-  <testcase name="글 제목 수정" classname="com.musiclog.controller.CommentControllerTest" time="0.014">
+  <testcase name="글 1개 조회" classname="com.musiclog.controller.CommentControllerTest" time="0.084"/>
+  <testcase name="글 여러개 조회" classname="com.musiclog.controller.CommentControllerTest" time="0.399"/>
+  <testcase name="글 여러개 조회 페이징" classname="com.musiclog.controller.CommentControllerTest" time="0.072"/>
+  <testcase name="글 제목 수정" classname="com.musiclog.controller.CommentControllerTest" time="0.025">
     <failure message="java.lang.AssertionError: Status expected:&lt;200&gt; but was:&lt;401&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Status expected:&lt;200&gt; but was:&lt;401&gt;
 	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
 	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
@@ -284,83 +284,148 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="게시글 삭제" classname="com.musiclog.controller.CommentControllerTest" time="0.028">
-    <failure message="java.lang.AssertionError: Status expected:&lt;200&gt; but was:&lt;401&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Status expected:&lt;200&gt; but was:&lt;401&gt;
-	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
-	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
-	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:637)
-	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
-	at com.musiclog.controller.CommentControllerTest.test8(CommentControllerTest.java:226)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+  <testcase name="게시글 삭제" classname="com.musiclog.controller.CommentControllerTest" time="0.019">
+    <failure message="jakarta.servlet.ServletException: Request processing failed: java.lang.ClassCastException: class java.lang.String cannot be cast to class com.musiclog.config.UserPrincipal (java.lang.String is in module java.base of loader 'bootstrap'; com.musiclog.config.UserPrincipal is in unnamed module of loader 'app')" type="jakarta.servlet.ServletException">jakarta.servlet.ServletException: Request processing failed: java.lang.ClassCastException: class java.lang.String cannot be cast to class com.musiclog.config.UserPrincipal (java.lang.String is in module java.base of loader 'bootstrap'; com.musiclog.config.UserPrincipal is in unnamed module of loader 'app')
+	at app//org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1019)
+	at app//org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936)
+	at app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:553)
+	at app//org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at app//org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72)
+	at app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at app//org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:165)
+	at app//org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at app//org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227)
+	at app//org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
+	at app//org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at app//org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at app//org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at app//org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:145)
+	at app//org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:101)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227)
+	at app//org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at app//org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at app//org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at app//org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at app//org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at app//org.springframework.security.web.debug.DebugFilter.invokeWithWrappedRequest(DebugFilter.java:90)
+	at app//org.springframework.security.web.debug.DebugFilter.doFilter(DebugFilter.java:78)
+	at app//org.springframework.security.web.debug.DebugFilter.doFilter(DebugFilter.java:67)
+	at app//org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at app//org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at app//org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at app//org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at app//org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at app//org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at app//org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at app//org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:143)
+	at app//org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
+	at app//org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at app//org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at app//org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at app//org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at app//org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at app//org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:201)
+	at app//com.musiclog.controller.CommentControllerTest.test8(CommentControllerTest.java:224)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base@17.0.7/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base@17.0.7/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at app//org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
 	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:110)
 	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:90)
 	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:85)
 	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
 	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
 	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
@@ -373,87 +438,188 @@
 	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-</failure>
-  </testcase>
-  <testcase name="존재하지 않는 게시글 조회" classname="com.musiclog.controller.CommentControllerTest" time="0.015">
-    <failure message="java.lang.AssertionError: Status expected:&lt;404&gt; but was:&lt;401&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Status expected:&lt;404&gt; but was:&lt;401&gt;
-	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
-	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
-	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:637)
-	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
-	at com.musiclog.controller.CommentControllerTest.test9(CommentControllerTest.java:238)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: java.lang.ClassCastException: class java.lang.String cannot be cast to class com.musiclog.config.UserPrincipal (java.lang.String is in module java.base of loader 'bootstrap'; com.musiclog.config.UserPrincipal is in unnamed module of loader 'app')
+	at com.musiclog.config.MusiclogPermissionEvaluator.hasPermission(MusiclogPermissionEvaluator.java:26)
+	at org.springframework.security.access.expression.SecurityExpressionRoot.hasPermission(SecurityExpressionRoot.java:216)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.springframework.expression.spel.support.ReflectiveMethodExecutor.execute(ReflectiveMethodExecutor.java:139)
+	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:139)
+	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:95)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getTypedValue(SpelNodeImpl.java:119)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:309)
+	at org.springframework.security.access.expression.ExpressionUtils.evaluateAsBoolean(ExpressionUtils.java:30)
+	at org.springframework.security.authorization.method.PreAuthorizeAuthorizationManager.check(PreAuthorizeAuthorizationManager.java:68)
+	at org.springframework.security.authorization.method.PreAuthorizeAuthorizationManager.check(PreAuthorizeAuthorizationManager.java:40)
+	at org.springframework.security.config.annotation.method.configuration.DeferringObservationAuthorizationManager.check(DeferringObservationAuthorizationManager.java:47)
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.attemptAuthorization(AuthorizationManagerBeforeMethodInterceptor.java:252)
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.invoke(AuthorizationManagerBeforeMethodInterceptor.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:703)
+	at com.musiclog.controller.PostController$$SpringCGLIB$$0.delete(&lt;generated&gt;)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	... 153 more
+</failure>
+  </testcase>
+  <testcase name="존재하지 않는 게시글 조회" classname="com.musiclog.controller.CommentControllerTest" time="0.014">
+    <failure message="jakarta.servlet.ServletException: Request processing failed: java.lang.ClassCastException: class java.lang.String cannot be cast to class com.musiclog.config.UserPrincipal (java.lang.String is in module java.base of loader 'bootstrap'; com.musiclog.config.UserPrincipal is in unnamed module of loader 'app')" type="jakarta.servlet.ServletException">jakarta.servlet.ServletException: Request processing failed: java.lang.ClassCastException: class java.lang.String cannot be cast to class com.musiclog.config.UserPrincipal (java.lang.String is in module java.base of loader 'bootstrap'; com.musiclog.config.UserPrincipal is in unnamed module of loader 'app')
+	at app//org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1019)
+	at app//org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936)
+	at app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:553)
+	at app//org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at app//org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72)
+	at app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at app//org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:165)
+	at app//org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at app//org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227)
+	at app//org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
+	at app//org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at app//org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at app//org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at app//org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:145)
+	at app//org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:101)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227)
+	at app//org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at app//org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at app//org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at app//org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at app//org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at app//org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at app//org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at app//org.springframework.security.web.debug.DebugFilter.invokeWithWrappedRequest(DebugFilter.java:90)
+	at app//org.springframework.security.web.debug.DebugFilter.doFilter(DebugFilter.java:78)
+	at app//org.springframework.security.web.debug.DebugFilter.doFilter(DebugFilter.java:67)
+	at app//org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at app//org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at app//org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at app//org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at app//org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at app//org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at app//org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at app//org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:143)
+	at app//org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
+	at app//org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at app//org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at app//org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at app//org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at app//org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at app//org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:201)
+	at app//com.musiclog.controller.CommentControllerTest.test9(CommentControllerTest.java:236)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base@17.0.7/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base@17.0.7/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at app//org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
 	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:110)
 	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:90)
 	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:85)
 	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.7/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.7/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.7/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
 	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
 	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
@@ -466,12 +632,48 @@
 	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: java.lang.ClassCastException: class java.lang.String cannot be cast to class com.musiclog.config.UserPrincipal (java.lang.String is in module java.base of loader 'bootstrap'; com.musiclog.config.UserPrincipal is in unnamed module of loader 'app')
+	at com.musiclog.config.MusiclogPermissionEvaluator.hasPermission(MusiclogPermissionEvaluator.java:26)
+	at org.springframework.security.access.expression.SecurityExpressionRoot.hasPermission(SecurityExpressionRoot.java:216)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.expression.spel.support.ReflectiveMethodExecutor.execute(ReflectiveMethodExecutor.java:139)
+	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:112)
+	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:95)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getTypedValue(SpelNodeImpl.java:119)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:309)
+	at org.springframework.security.access.expression.ExpressionUtils.evaluateAsBoolean(ExpressionUtils.java:30)
+	at org.springframework.security.authorization.method.PreAuthorizeAuthorizationManager.check(PreAuthorizeAuthorizationManager.java:68)
+	at org.springframework.security.authorization.method.PreAuthorizeAuthorizationManager.check(PreAuthorizeAuthorizationManager.java:40)
+	at org.springframework.security.config.annotation.method.configuration.DeferringObservationAuthorizationManager.check(DeferringObservationAuthorizationManager.java:47)
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.attemptAuthorization(AuthorizationManagerBeforeMethodInterceptor.java:252)
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.invoke(AuthorizationManagerBeforeMethodInterceptor.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:703)
+	at com.musiclog.controller.PostController$$SpringCGLIB$$0.delete(&lt;generated&gt;)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	... 153 more
 </failure>
   </testcase>
-  <system-out><![CDATA[08:11:37.686 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.musiclog.controller.CommentControllerTest]: CommentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-08:11:37.890 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.musiclog.MusiclogApplication for test class com.musiclog.controller.CommentControllerTest
+  <system-out><![CDATA[21:31:53.741 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.musiclog.controller.CommentControllerTest]: CommentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+21:31:53.834 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.musiclog.MusiclogApplication for test class com.musiclog.controller.CommentControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -479,32 +681,32 @@
  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
   '  |____| .__|_| |_|_| |_\__, | / / / /
  =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v3.1.1)
+ :: Spring Boot ::                (v3.1.4)
 
-2023-10-01T08:11:38.289+09:00  INFO 2067 --- [    Test worker] c.m.controller.CommentControllerTest     : Starting CommentControllerTest using Java 17.0.7 with PID 2067 (started by jeongsang-yun in /Users/jeongsang-yun/Documents/GitHub/musiclog)
-2023-10-01T08:11:38.290+09:00  INFO 2067 --- [    Test worker] c.m.controller.CommentControllerTest     : No active profile set, falling back to 1 default profile: "default"
-2023-10-01T08:11:38.841+09:00  INFO 2067 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-10-01T08:11:38.909+09:00  INFO 2067 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 3 JPA repository interfaces.
-2023-10-01T08:11:39.245+09:00  INFO 2067 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-10-01T08:11:39.373+09:00  INFO 2067 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:musiclog:NON_KEYWORDS=USER user=SA
-2023-10-01T08:11:39.375+09:00  INFO 2067 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-10-01T08:11:39.418+09:00  INFO 2067 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-10-01T08:11:39.457+09:00  INFO 2067 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.5.Final
-2023-10-01T08:11:39.459+09:00  INFO 2067 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-10-01T08:11:39.544+09:00  INFO 2067 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-10-01T08:11:39.634+09:00  INFO 2067 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-10-01T08:11:39.805+09:00  INFO 2067 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-10-01T08:11:40.264+09:00  INFO 2067 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-10-01T08:11:40.296+09:00  INFO 2067 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-10-01T08:11:40.679+09:00  WARN 2067 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-10-01T08:11:40.779+09:00  INFO 2067 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@9e092b5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@52737c1, org.springframework.security.web.context.SecurityContextHolderFilter@50b78155, org.springframework.security.web.header.HeaderWriterFilter@33efa7d4, org.springframework.security.web.authentication.logout.LogoutFilter@7acf07b2, com.musiclog.config.filter.EmailPasswordAuthFilter@207f7baa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@61c11339, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@31ecd003, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@3af6d7a7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@158cb50a, org.springframework.security.web.access.ExceptionTranslationFilter@41ae9f11, org.springframework.security.web.access.intercept.AuthorizationFilter@49bf5ec8]
-2023-10-01T08:11:40.895+09:00  WARN 2067 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/favicon.ico']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-10-01T08:11:40.895+09:00  INFO 2067 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Mvc [pattern='/favicon.ico']
-2023-10-01T08:11:40.895+09:00  WARN 2067 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/error']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-10-01T08:11:40.895+09:00  INFO 2067 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Mvc [pattern='/error']
-2023-10-01T08:11:40.895+09:00  WARN 2067 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore org.springframework.boot.autoconfigure.security.servlet.PathRequest$H2ConsoleRequestMatcher@2a49753. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-10-01T08:11:40.895+09:00  INFO 2067 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure org.springframework.boot.autoconfigure.security.servlet.PathRequest$H2ConsoleRequestMatcher@2a49753
-2023-10-01T08:11:40.898+09:00  WARN 2067 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : 
+2023-10-08T21:31:54.098+09:00  INFO 11619 --- [    Test worker] c.m.controller.CommentControllerTest     : Starting CommentControllerTest using Java 17.0.7 with PID 11619 (started by jeongsang-yun in /Users/jeongsang-yun/Documents/GitHub/musiclog)
+2023-10-08T21:31:54.099+09:00  INFO 11619 --- [    Test worker] c.m.controller.CommentControllerTest     : No active profile set, falling back to 1 default profile: "default"
+2023-10-08T21:31:54.564+09:00  INFO 11619 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-08T21:31:54.617+09:00  INFO 11619 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
+2023-10-08T21:31:54.938+09:00  INFO 11619 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-08T21:31:55.060+09:00  INFO 11619 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:musiclog:NON_KEYWORDS=USER user=SA
+2023-10-08T21:31:55.061+09:00  INFO 11619 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-08T21:31:55.095+09:00  INFO 11619 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-08T21:31:55.130+09:00  INFO 11619 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.9.Final
+2023-10-08T21:31:55.132+09:00  INFO 11619 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-10-08T21:31:55.212+09:00  INFO 11619 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-08T21:31:55.304+09:00  INFO 11619 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-08T21:31:55.474+09:00  INFO 11619 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-08T21:31:55.938+09:00  INFO 11619 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-08T21:31:55.970+09:00  INFO 11619 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-08T21:31:56.350+09:00  WARN 11619 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-08T21:31:56.459+09:00  INFO 11619 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@31c31fa6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@70ebaa1e, org.springframework.security.web.context.SecurityContextHolderFilter@6956081d, org.springframework.security.web.header.HeaderWriterFilter@206de1f, org.springframework.security.web.authentication.logout.LogoutFilter@31beb0d0, com.musiclog.config.filter.EmailPasswordAuthFilter@6a3c1b56, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@135f160e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a41f4a7, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@1dbb9a4a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d5e3f58, org.springframework.security.web.access.ExceptionTranslationFilter@399acce3, org.springframework.security.web.access.intercept.AuthorizationFilter@78a0d664]
+2023-10-08T21:31:56.463+09:00  WARN 11619 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/favicon.ico']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-10-08T21:31:56.464+09:00  INFO 11619 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/favicon.ico']
+2023-10-08T21:31:56.464+09:00  WARN 11619 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/error']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-10-08T21:31:56.464+09:00  INFO 11619 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/error']
+2023-10-08T21:31:56.464+09:00  WARN 11619 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore org.springframework.boot.autoconfigure.security.servlet.PathRequest$H2ConsoleRequestMatcher@118f39f3. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-10-08T21:31:56.464+09:00  INFO 11619 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure org.springframework.boot.autoconfigure.security.servlet.PathRequest$H2ConsoleRequestMatcher@118f39f3
+2023-10-08T21:31:56.467+09:00  WARN 11619 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : 
 
 ********************************************************************
 **********        Security debugging is enabled.       *************
@@ -513,18 +715,18 @@
 ********************************************************************
 
 
-2023-10-01T08:11:41.083+09:00  INFO 2067 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:musiclog:NON_KEYWORDS=USER'
-2023-10-01T08:11:41.234+09:00  INFO 2067 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-10-01T08:11:41.234+09:00  INFO 2067 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-10-01T08:11:41.235+09:00  INFO 2067 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-10-01T08:11:41.255+09:00  INFO 2067 --- [    Test worker] c.m.controller.CommentControllerTest     : Started CommentControllerTest in 3.197 seconds (process running for 4.954)
-2023-10-01T08:11:41.687+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+2023-10-08T21:31:56.757+09:00  INFO 11619 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:musiclog:NON_KEYWORDS=USER'
+2023-10-08T21:31:56.908+09:00  INFO 11619 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-10-08T21:31:56.908+09:00  INFO 11619 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-10-08T21:31:56.910+09:00  INFO 11619 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-10-08T21:31:56.932+09:00  INFO 11619 --- [    Test worker] c.m.controller.CommentControllerTest     : Started CommentControllerTest in 3.006 seconds (process running for 3.931)
+2023-10-08T21:31:57.329+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for PATCH '/posts/3':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@22cf6c9c
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@33e6176b
 
 servletPath:
 pathInfo:/posts/3
@@ -552,11 +754,11 @@ Security filter chain: [
 ************************************************************
 
 
-2023-10-01T08:11:41.765+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+2023-10-08T21:31:57.416+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
-New HTTP session created: 7b18bb71-ab9e-4ead-a083-59e97bfac085
+New HTTP session created: fb7be135-bbf4-4e0a-ae7f-5e35d07232bc
 
 Call stack: 
 
@@ -565,7 +767,7 @@ Call stack:
 	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
 	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
 	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
-	at org.springframework.security.web.savedrequest.HttpSessionRequestCache.saveRequest(HttpSessionRequestCache.java:76)
+	at org.springframework.security.web.savedrequest.HttpSessionRequestCache.saveRequest(HttpSessionRequestCache.java:78)
 	at org.springframework.security.web.access.ExceptionTranslationFilter.sendStartAuthentication(ExceptionTranslationFilter.java:218)
 	at org.springframework.security.web.access.ExceptionTranslationFilter.handleAccessDeniedException(ExceptionTranslationFilter.java:197)
 	at org.springframework.security.web.access.ExceptionTranslationFilter.handleSpringSecurityException(ExceptionTranslationFilter.java:178)
@@ -713,7 +915,7 @@ Call stack:
 ************************************************************
 
 
-2023-10-01T08:11:41.768+09:00 ERROR 2067 --- [    Test worker] c.m.config.handler.Http401Handler        : [인증오류] 로그인이 필요합니다.
+2023-10-08T21:31:57.419+09:00 ERROR 11619 --- [    Test worker] c.m.config.handler.Http401Handler        : [인증오류] 로그인이 필요합니다.
 
 MockHttpServletRequest:
       HTTP Method = PATCH
@@ -745,19 +947,19 @@ FlashMap:
 MockHttpServletResponse:
            Status = 401
     Error message = null
-          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY", Set-Cookie:"SESSION=N2IxOGJiNzEtYWI5ZS00ZWFkLWEwODMtNTllOTdiZmFjMDg1; Path=/; HttpOnly; SameSite=Lax"]
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY", Set-Cookie:"SESSION=ZmI3YmUxMzUtYmJmNC00ZTBhLWFlN2YtNWUzNWQwNzIzMmJj; Path=/; HttpOnly; SameSite=Lax"]
      Content type = null
              Body = {"code":"401","message":"로그인이 필요합니다.","validation":{}}
     Forwarded URL = null
    Redirected URL = null
-          Cookies = [[MockCookie@6fca831e name = 'SESSION', value = 'N2IxOGJiNzEtYWI5ZS00ZWFkLWEwODMtNTllOTdiZmFjMDg1', comment = [null], domain = [null], maxAge = -1, path = '/', secure = false, version = 0, httpOnly = true]]
-2023-10-01T08:11:41.885+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+          Cookies = [[MockCookie@5a4a8a33 name = 'SESSION', value = 'ZmI3YmUxMzUtYmJmNC00ZTBhLWFlN2YtNWUzNWQwNzIzMmJj', comment = [null], domain = [null], maxAge = -1, path = '/', secure = false, version = 0, httpOnly = true]]
+2023-10-08T21:31:57.547+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for POST '/posts':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@2728e305
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@3f679ce
 
 servletPath:
 pathInfo:/posts
@@ -796,7 +998,7 @@ MockHttpServletRequest:
 
 Handler:
              Type = com.musiclog.controller.PostController
-           Method = com.musiclog.controller.PostController#post(PostCreate)
+           Method = com.musiclog.controller.PostController#post(UserPrincipal, PostCreate)
 
 Async:
     Async started = false
@@ -822,13 +1024,13 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2023-10-01T08:11:41.945+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+2023-10-08T21:31:57.626+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for POST '/posts':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@3118ed2c
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@736de3b6
 
 servletPath:
 pathInfo:/posts
@@ -857,11 +1059,11 @@ Security filter chain: [
 ************************************************************
 
 
-2023-10-01T08:11:41.952+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+2023-10-08T21:31:57.641+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
-New HTTP session created: 7f4fafa7-928d-49dc-a0d0-b2238f2b5f09
+New HTTP session created: 6f591a27-c7b3-4a2d-8cdc-934cf7dcd375
 
 Call stack: 
 
@@ -870,7 +1072,7 @@ Call stack:
 	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
 	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
 	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
-	at org.springframework.security.web.savedrequest.HttpSessionRequestCache.saveRequest(HttpSessionRequestCache.java:76)
+	at org.springframework.security.web.savedrequest.HttpSessionRequestCache.saveRequest(HttpSessionRequestCache.java:78)
 	at org.springframework.security.web.access.ExceptionTranslationFilter.sendStartAuthentication(ExceptionTranslationFilter.java:218)
 	at org.springframework.security.web.access.ExceptionTranslationFilter.handleAccessDeniedException(ExceptionTranslationFilter.java:197)
 	at org.springframework.security.web.access.ExceptionTranslationFilter.handleSpringSecurityException(ExceptionTranslationFilter.java:178)
@@ -1018,7 +1220,7 @@ Call stack:
 ************************************************************
 
 
-2023-10-01T08:11:41.954+09:00 ERROR 2067 --- [    Test worker] c.m.config.handler.Http401Handler        : [인증오류] 로그인이 필요합니다.
+2023-10-08T21:31:57.652+09:00 ERROR 11619 --- [    Test worker] c.m.config.handler.Http401Handler        : [인증오류] 로그인이 필요합니다.
 
 MockHttpServletRequest:
       HTTP Method = POST
@@ -1030,7 +1232,7 @@ MockHttpServletRequest:
 
 Handler:
              Type = com.musiclog.controller.PostController
-           Method = com.musiclog.controller.PostController#post(PostCreate)
+           Method = com.musiclog.controller.PostController#post(UserPrincipal, PostCreate)
 
 Async:
     Async started = false
@@ -1050,19 +1252,19 @@ FlashMap:
 MockHttpServletResponse:
            Status = 401
     Error message = null
-          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY", Set-Cookie:"SESSION=N2Y0ZmFmYTctOTI4ZC00OWRjLWEwZDAtYjIyMzhmMmI1ZjA5; Path=/; HttpOnly; SameSite=Lax"]
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY", Set-Cookie:"SESSION=NmY1OTFhMjctYzdiMy00YTJkLThjZGMtOTM0Y2Y3ZGNkMzc1; Path=/; HttpOnly; SameSite=Lax"]
      Content type = null
              Body = {"code":"401","message":"로그인이 필요합니다.","validation":{}}
     Forwarded URL = null
    Redirected URL = null
-          Cookies = [[MockCookie@4bdd6fe0 name = 'SESSION', value = 'N2Y0ZmFmYTctOTI4ZC00OWRjLWEwZDAtYjIyMzhmMmI1ZjA5', comment = [null], domain = [null], maxAge = -1, path = '/', secure = false, version = 0, httpOnly = true]]
-2023-10-01T08:11:42.023+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+          Cookies = [[MockCookie@3c67b7a9 name = 'SESSION', value = 'NmY1OTFhMjctYzdiMy00YTJkLThjZGMtOTM0Y2Y3ZGNkMzc1', comment = [null], domain = [null], maxAge = -1, path = '/', secure = false, version = 0, httpOnly = true]]
+2023-10-08T21:31:57.704+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for GET '/posts/1':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@7475f071
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@5a429813
 
 servletPath:
 pathInfo:/posts/1
@@ -1126,13 +1328,13 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2023-10-01T08:11:42.088+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+2023-10-08T21:31:57.757+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for GET '/posts?page=1&size=10':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@4c58212
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@53b42a0d
 
 servletPath:
 pathInfo:/posts
@@ -1196,13 +1398,13 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2023-10-01T08:11:42.295+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+2023-10-08T21:31:58.179+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for GET '/posts?page=0&size=10':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@5b12157b
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@1344ee24
 
 servletPath:
 pathInfo:/posts
@@ -1266,13 +1468,13 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2023-10-01T08:11:42.326+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+2023-10-08T21:31:58.232+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for PATCH '/posts/24':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@c3fd72
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@4ff1e20b
 
 servletPath:
 pathInfo:/posts/24
@@ -1300,11 +1502,11 @@ Security filter chain: [
 ************************************************************
 
 
-2023-10-01T08:11:42.329+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+2023-10-08T21:31:58.236+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
-New HTTP session created: 2a8cf2f8-e923-4fb8-8d05-fb12a91eb320
+New HTTP session created: bc12f9c5-4d1c-4b35-88c5-ffaf42b84ab7
 
 Call stack: 
 
@@ -1313,7 +1515,7 @@ Call stack:
 	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
 	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
 	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
-	at org.springframework.security.web.savedrequest.HttpSessionRequestCache.saveRequest(HttpSessionRequestCache.java:76)
+	at org.springframework.security.web.savedrequest.HttpSessionRequestCache.saveRequest(HttpSessionRequestCache.java:78)
 	at org.springframework.security.web.access.ExceptionTranslationFilter.sendStartAuthentication(ExceptionTranslationFilter.java:218)
 	at org.springframework.security.web.access.ExceptionTranslationFilter.handleAccessDeniedException(ExceptionTranslationFilter.java:197)
 	at org.springframework.security.web.access.ExceptionTranslationFilter.handleSpringSecurityException(ExceptionTranslationFilter.java:178)
@@ -1461,7 +1663,7 @@ Call stack:
 ************************************************************
 
 
-2023-10-01T08:11:42.330+09:00 ERROR 2067 --- [    Test worker] c.m.config.handler.Http401Handler        : [인증오류] 로그인이 필요합니다.
+2023-10-08T21:31:58.237+09:00 ERROR 11619 --- [    Test worker] c.m.config.handler.Http401Handler        : [인증오류] 로그인이 필요합니다.
 
 MockHttpServletRequest:
       HTTP Method = PATCH
@@ -1493,19 +1695,19 @@ FlashMap:
 MockHttpServletResponse:
            Status = 401
     Error message = null
-          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY", Set-Cookie:"SESSION=MmE4Y2YyZjgtZTkyMy00ZmI4LThkMDUtZmIxMmE5MWViMzIw; Path=/; HttpOnly; SameSite=Lax"]
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY", Set-Cookie:"SESSION=YmMxMmY5YzUtNGQxYy00YjM1LTg4YzUtZmZhZjQyYjg0YWI3; Path=/; HttpOnly; SameSite=Lax"]
      Content type = null
              Body = {"code":"401","message":"로그인이 필요합니다.","validation":{}}
     Forwarded URL = null
    Redirected URL = null
-          Cookies = [[MockCookie@125c443 name = 'SESSION', value = 'MmE4Y2YyZjgtZTkyMy00ZmI4LThkMDUtZmIxMmE5MWViMzIw', comment = [null], domain = [null], maxAge = -1, path = '/', secure = false, version = 0, httpOnly = true]]
-2023-10-01T08:11:42.341+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+          Cookies = [[MockCookie@49de4263 name = 'SESSION', value = 'YmMxMmY5YzUtNGQxYy00YjM1LTg4YzUtZmZhZjQyYjg0YWI3', comment = [null], domain = [null], maxAge = -1, path = '/', secure = false, version = 0, httpOnly = true]]
+2023-10-08T21:31:58.258+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for DELETE '/posts/25':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@644ae4ff
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@233b5c71
 
 servletPath:
 pathInfo:/posts/25
@@ -1532,212 +1734,13 @@ Security filter chain: [
 ************************************************************
 
 
-2023-10-01T08:11:42.344+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
-
-************************************************************
-
-New HTTP session created: 833509e9-5e03-4492-9c13-492b4b79e7be
-
-Call stack: 
-
-	at org.springframework.security.web.debug.Logger.info(Logger.java:46)
-	at org.springframework.security.web.debug.DebugFilter$DebugRequestWrapper.getSession(DebugFilter.java:171)
-	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
-	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
-	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
-	at org.springframework.security.web.savedrequest.HttpSessionRequestCache.saveRequest(HttpSessionRequestCache.java:76)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.sendStartAuthentication(ExceptionTranslationFilter.java:218)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.handleAccessDeniedException(ExceptionTranslationFilter.java:197)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.handleSpringSecurityException(ExceptionTranslationFilter.java:178)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:147)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:145)
-	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:101)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227)
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
-	at org.springframework.security.web.debug.DebugFilter.invokeWithWrappedRequest(DebugFilter.java:90)
-	at org.springframework.security.web.debug.DebugFilter.doFilter(DebugFilter.java:78)
-	at org.springframework.security.web.debug.DebugFilter.doFilter(DebugFilter.java:67)
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
-	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:143)
-	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
-	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:201)
-	at com.musiclog.controller.CommentControllerTest.test8(CommentControllerTest.java:224)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:110)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:90)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:85)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-
-
-************************************************************
-
-
-2023-10-01T08:11:42.345+09:00 ERROR 2067 --- [    Test worker] c.m.config.handler.Http401Handler        : [인증오류] 로그인이 필요합니다.
-
-MockHttpServletRequest:
-      HTTP Method = DELETE
-      Request URI = /posts/25
-       Parameters = {}
-          Headers = [Content-Type:"application/json;charset=UTF-8"]
-             Body = null
-    Session Attrs = {}
-
-Handler:
-             Type = com.musiclog.controller.PostController
-           Method = com.musiclog.controller.PostController#delete(Long)
-
-Async:
-    Async started = false
-     Async result = null
-
-Resolved Exception:
-             Type = null
-
-ModelAndView:
-        View name = null
-             View = null
-            Model = null
-
-FlashMap:
-       Attributes = null
-
-MockHttpServletResponse:
-           Status = 401
-    Error message = null
-          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY", Set-Cookie:"SESSION=ODMzNTA5ZTktNWUwMy00NDkyLTljMTMtNDkyYjRiNzllN2Jl; Path=/; HttpOnly; SameSite=Lax"]
-     Content type = null
-             Body = {"code":"401","message":"로그인이 필요합니다.","validation":{}}
-    Forwarded URL = null
-   Redirected URL = null
-          Cookies = [[MockCookie@10e5471d name = 'SESSION', value = 'ODMzNTA5ZTktNWUwMy00NDkyLTljMTMtNDkyYjRiNzllN2Jl', comment = [null], domain = [null], maxAge = -1, path = '/', secure = false, version = 0, httpOnly = true]]
-2023-10-01T08:11:42.368+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+2023-10-08T21:31:58.275+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for DELETE '/posts/1':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@1bab3926
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@3e6f3ad5
 
 servletPath:
 pathInfo:/posts/1
@@ -1764,205 +1767,6 @@ Security filter chain: [
 ************************************************************
 
 
-2023-10-01T08:11:42.371+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
-
-************************************************************
-
-New HTTP session created: 71e4ff94-1958-4562-89af-a443a480129f
-
-Call stack: 
-
-	at org.springframework.security.web.debug.Logger.info(Logger.java:46)
-	at org.springframework.security.web.debug.DebugFilter$DebugRequestWrapper.getSession(DebugFilter.java:171)
-	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
-	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
-	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229)
-	at org.springframework.security.web.savedrequest.HttpSessionRequestCache.saveRequest(HttpSessionRequestCache.java:76)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.sendStartAuthentication(ExceptionTranslationFilter.java:218)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.handleAccessDeniedException(ExceptionTranslationFilter.java:197)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.handleSpringSecurityException(ExceptionTranslationFilter.java:178)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:147)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:145)
-	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:101)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227)
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
-	at org.springframework.security.web.debug.DebugFilter.invokeWithWrappedRequest(DebugFilter.java:90)
-	at org.springframework.security.web.debug.DebugFilter.doFilter(DebugFilter.java:78)
-	at org.springframework.security.web.debug.DebugFilter.doFilter(DebugFilter.java:67)
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
-	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:143)
-	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
-	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:201)
-	at com.musiclog.controller.CommentControllerTest.test9(CommentControllerTest.java:236)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:110)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:90)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:85)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-
-
-************************************************************
-
-
-2023-10-01T08:11:42.373+09:00 ERROR 2067 --- [    Test worker] c.m.config.handler.Http401Handler        : [인증오류] 로그인이 필요합니다.
-
-MockHttpServletRequest:
-      HTTP Method = DELETE
-      Request URI = /posts/1
-       Parameters = {}
-          Headers = [Content-Type:"application/json;charset=UTF-8"]
-             Body = null
-    Session Attrs = {}
-
-Handler:
-             Type = com.musiclog.controller.PostController
-           Method = com.musiclog.controller.PostController#delete(Long)
-
-Async:
-    Async started = false
-     Async result = null
-
-Resolved Exception:
-             Type = null
-
-ModelAndView:
-        View name = null
-             View = null
-            Model = null
-
-FlashMap:
-       Attributes = null
-
-MockHttpServletResponse:
-           Status = 401
-    Error message = null
-          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY", Set-Cookie:"SESSION=NzFlNGZmOTQtMTk1OC00NTYyLTg5YWYtYTQ0M2E0ODAxMjlm; Path=/; HttpOnly; SameSite=Lax"]
-     Content type = null
-             Body = {"code":"401","message":"로그인이 필요합니다.","validation":{}}
-    Forwarded URL = null
-   Redirected URL = null
-          Cookies = [[MockCookie@763960eb name = 'SESSION', value = 'NzFlNGZmOTQtMTk1OC00NTYyLTg5YWYtYTQ0M2E0ODAxMjlm', comment = [null], domain = [null], maxAge = -1, path = '/', secure = false, version = 0, httpOnly = true]]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.074s</div>
+<div class="counter">0.070s</div>
 <p>duration</p>
 </div>
 </td>
@@ -81,13 +81,13 @@
 <tr>
 <td class="success">글 단건 조회</td>
 <td class="success">test1()</td>
-<td class="success">0.054s</td>
+<td class="success">0.045s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">글 등록</td>
 <td class="success">test2()</td>
-<td class="success">0.020s</td>
+<td class="success">0.025s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -95,8 +95,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2023-10-01T08:11:43.612+09:00  INFO 2067 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.musiclog.controller.PostControllerDocTest]: PostControllerDocTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-10-01T08:11:43.614+09:00  INFO 2067 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.musiclog.MusiclogApplication for test class com.musiclog.controller.PostControllerDocTest
+<pre>2023-10-08T21:31:59.445+09:00  INFO 11619 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.musiclog.controller.PostControllerDocTest]: PostControllerDocTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-10-08T21:31:59.447+09:00  INFO 11619 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.musiclog.MusiclogApplication for test class com.musiclog.controller.PostControllerDocTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -104,30 +104,30 @@
  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
   '  |____| .__|_| |_|_| |_\__, | / / / /
  =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v3.1.1)
+ :: Spring Boot ::                (v3.1.4)
 
-2023-10-01T08:11:43.628+09:00  INFO 2067 --- [    Test worker] c.m.controller.PostControllerDocTest     : Starting PostControllerDocTest using Java 17.0.7 with PID 2067 (started by jeongsang-yun in /Users/jeongsang-yun/Documents/GitHub/musiclog)
-2023-10-01T08:11:43.629+09:00  INFO 2067 --- [    Test worker] c.m.controller.PostControllerDocTest     : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2023-10-01T08:11:43.750+09:00  INFO 2067 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-10-01T08:11:43.764+09:00  INFO 2067 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 3 JPA repository interfaces.
-2023-10-01T08:11:43.848+09:00  INFO 2067 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2023-10-01T08:11:43.848+09:00  INFO 2067 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:musiclog:NON_KEYWORDS=USER user=SA
-2023-10-01T08:11:43.848+09:00  INFO 2067 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
-2023-10-01T08:11:43.850+09:00  INFO 2067 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-10-01T08:11:43.856+09:00  INFO 2067 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-10-01T08:11:43.856+09:00  INFO 2067 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-10-01T08:11:43.872+09:00  INFO 2067 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-10-01T08:11:43.906+09:00  INFO 2067 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-10-01T08:11:43.912+09:00  INFO 2067 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-10-01T08:11:44.154+09:00  WARN 2067 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-10-01T08:11:44.209+09:00  INFO 2067 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5128197f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2b56774b, org.springframework.security.web.context.SecurityContextHolderFilter@1af2c5c8, org.springframework.security.web.header.HeaderWriterFilter@cfec1ec, org.springframework.security.web.authentication.logout.LogoutFilter@6a7b523b, com.musiclog.config.filter.EmailPasswordAuthFilter@7c74d262, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3f5298a5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ca0546a, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@617275e0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@27b94ed9, org.springframework.security.web.access.ExceptionTranslationFilter@2040722f, org.springframework.security.web.access.intercept.AuthorizationFilter@5f5a7737]
-2023-10-01T08:11:44.276+09:00  WARN 2067 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/favicon.ico']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-10-01T08:11:44.277+09:00  INFO 2067 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Mvc [pattern='/favicon.ico']
-2023-10-01T08:11:44.277+09:00  WARN 2067 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/error']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-10-01T08:11:44.277+09:00  INFO 2067 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Mvc [pattern='/error']
-2023-10-01T08:11:44.277+09:00  WARN 2067 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore org.springframework.boot.autoconfigure.security.servlet.PathRequest$H2ConsoleRequestMatcher@1c07b091. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-10-01T08:11:44.277+09:00  INFO 2067 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure org.springframework.boot.autoconfigure.security.servlet.PathRequest$H2ConsoleRequestMatcher@1c07b091
-2023-10-01T08:11:44.277+09:00  WARN 2067 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : 
+2023-10-08T21:31:59.461+09:00  INFO 11619 --- [    Test worker] c.m.controller.PostControllerDocTest     : Starting PostControllerDocTest using Java 17.0.7 with PID 11619 (started by jeongsang-yun in /Users/jeongsang-yun/Documents/GitHub/musiclog)
+2023-10-08T21:31:59.461+09:00  INFO 11619 --- [    Test worker] c.m.controller.PostControllerDocTest     : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-10-08T21:31:59.564+09:00  INFO 11619 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-08T21:31:59.579+09:00  INFO 11619 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 3 JPA repository interfaces.
+2023-10-08T21:31:59.643+09:00  INFO 11619 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-10-08T21:31:59.643+09:00  INFO 11619 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:musiclog:NON_KEYWORDS=USER user=SA
+2023-10-08T21:31:59.644+09:00  INFO 11619 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-10-08T21:31:59.644+09:00  INFO 11619 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-08T21:31:59.648+09:00  INFO 11619 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-08T21:31:59.649+09:00  INFO 11619 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-08T21:31:59.657+09:00  INFO 11619 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-08T21:31:59.684+09:00  INFO 11619 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-08T21:31:59.688+09:00  INFO 11619 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-08T21:31:59.802+09:00  WARN 11619 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-08T21:31:59.823+09:00  INFO 11619 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@b7a74ac, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@54077082, org.springframework.security.web.context.SecurityContextHolderFilter@6b861a26, org.springframework.security.web.header.HeaderWriterFilter@68ba2801, org.springframework.security.web.authentication.logout.LogoutFilter@4d0ec988, com.musiclog.config.filter.EmailPasswordAuthFilter@728c3a0e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3db32d5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f41798d, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@3003b9ad, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63c8d3da, org.springframework.security.web.access.ExceptionTranslationFilter@485c8d5e, org.springframework.security.web.access.intercept.AuthorizationFilter@33b09909]
+2023-10-08T21:31:59.824+09:00  WARN 11619 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/favicon.ico']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-10-08T21:31:59.824+09:00  INFO 11619 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/favicon.ico']
+2023-10-08T21:31:59.824+09:00  WARN 11619 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/error']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-10-08T21:31:59.824+09:00  INFO 11619 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/error']
+2023-10-08T21:31:59.824+09:00  WARN 11619 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore org.springframework.boot.autoconfigure.security.servlet.PathRequest$H2ConsoleRequestMatcher@4c0e2715. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-10-08T21:31:59.824+09:00  INFO 11619 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure org.springframework.boot.autoconfigure.security.servlet.PathRequest$H2ConsoleRequestMatcher@4c0e2715
+2023-10-08T21:31:59.825+09:00  WARN 11619 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : 
 
 ********************************************************************
 **********        Security debugging is enabled.       *************
@@ -136,18 +136,18 @@
 ********************************************************************
 
 
-2023-10-01T08:11:44.358+09:00  INFO 2067 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:musiclog:NON_KEYWORDS=USER'
-2023-10-01T08:11:44.410+09:00  INFO 2067 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-10-01T08:11:44.410+09:00  INFO 2067 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-10-01T08:11:44.411+09:00  INFO 2067 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-10-01T08:11:44.417+09:00  INFO 2067 --- [    Test worker] c.m.controller.PostControllerDocTest     : Started PostControllerDocTest in 0.801 seconds (process running for 8.116)
-2023-10-01T08:11:44.435+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+2023-10-08T21:31:59.902+09:00  INFO 11619 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:musiclog:NON_KEYWORDS=USER'
+2023-10-08T21:31:59.951+09:00  INFO 11619 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-10-08T21:31:59.951+09:00  INFO 11619 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-10-08T21:31:59.952+09:00  INFO 11619 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-10-08T21:31:59.958+09:00  INFO 11619 --- [    Test worker] c.m.controller.PostControllerDocTest     : Started PostControllerDocTest in 0.507 seconds (process running for 6.957)
+2023-10-08T21:31:59.969+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for GET '/posts/1':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@4127f82a
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@10762309
 
 servletPath:
 pathInfo:/posts/1
@@ -211,13 +211,13 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2023-10-01T08:11:44.478+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+2023-10-08T21:32:00.010+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for POST '/posts':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@28459752
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@425b142e
 
 servletPath:
 pathInfo:/posts
@@ -253,11 +253,11 @@ MockHttpServletRequest:
        Parameters = {}
           Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;, Accept:&quot;application/json&quot;, Content-Length:&quot;37&quot;]
              Body = {&quot;title&quot;:&quot;제목&quot;,&quot;content&quot;:&quot;내용&quot;}
-    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sdsd98987@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_ADMIN]]]}
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.musiclog.config.UserPrincipal [Username=sdsd98987@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_ADMIN]]]}
 
 Handler:
              Type = com.musiclog.controller.PostController
-           Method = com.musiclog.controller.PostController#post(PostCreate)
+           Method = com.musiclog.controller.PostController#post(UserPrincipal, PostCreate)
 
 Async:
     Async started = false
@@ -294,7 +294,7 @@ MockHttpServletResponse:
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.1.1</a> at Oct 1, 2023, 8:11:44 AM</p>
+<a href="http://www.gradle.org">Gradle 8.1.1</a> at Oct 8, 2023, 9:32:00 PM</p>
 </div>
 </div>
 </body>

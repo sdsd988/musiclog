@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.musiclog.controller.PostControllerTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2023-09-30T23:11:42" hostname="jeongsang-yun-ui-MacBookAir.local" time="0.234">
+<testsuite name="com.musiclog.controller.PostControllerTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2023-10-08T12:31:58" hostname="jeongsang-yun-ui-MacBookAir.local" time="0.266">
   <properties/>
-  <testcase name="존재하지 않는 게시글 수정" classname="com.musiclog.controller.PostControllerTest" time="0.028"/>
-  <testcase name="글 작성 요청 시 title 값은 필수다." classname="com.musiclog.controller.PostControllerTest" time="0.01"/>
-  <testcase name="글 작성" classname="com.musiclog.controller.PostControllerTest" time="0.039"/>
-  <testcase name="글 1개 조회" classname="com.musiclog.controller.PostControllerTest" time="0.016"/>
-  <testcase name="글 여러개 조회" classname="com.musiclog.controller.PostControllerTest" time="0.018"/>
-  <testcase name="글 여러개 조회 페이징" classname="com.musiclog.controller.PostControllerTest" time="0.053"/>
-  <testcase name="글 제목 수정" classname="com.musiclog.controller.PostControllerTest" time="0.03"/>
-  <testcase name="게시글 삭제" classname="com.musiclog.controller.PostControllerTest" time="0.018"/>
-  <testcase name="존재하지 않는 게시글 조회" classname="com.musiclog.controller.PostControllerTest" time="0.01"/>
-  <system-out><![CDATA[2023-10-01T08:11:42.395+09:00  INFO 2067 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.musiclog.controller.PostControllerTest]: PostControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-10-01T08:11:42.404+09:00  INFO 2067 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.musiclog.MusiclogApplication for test class com.musiclog.controller.PostControllerTest
-2023-10-01T08:11:42.422+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+  <testcase name="존재하지 않는 게시글 수정" classname="com.musiclog.controller.PostControllerTest" time="0.032"/>
+  <testcase name="글 작성 요청 시 title 값은 필수다." classname="com.musiclog.controller.PostControllerTest" time="0.015"/>
+  <testcase name="글 작성" classname="com.musiclog.controller.PostControllerTest" time="0.064"/>
+  <testcase name="글 1개 조회" classname="com.musiclog.controller.PostControllerTest" time="0.018"/>
+  <testcase name="글 여러개 조회" classname="com.musiclog.controller.PostControllerTest" time="0.021"/>
+  <testcase name="글 여러개 조회 페이징" classname="com.musiclog.controller.PostControllerTest" time="0.05"/>
+  <testcase name="글 제목 수정" classname="com.musiclog.controller.PostControllerTest" time="0.026"/>
+  <testcase name="게시글 삭제" classname="com.musiclog.controller.PostControllerTest" time="0.021"/>
+  <testcase name="존재하지 않는 게시글 조회" classname="com.musiclog.controller.PostControllerTest" time="0.009"/>
+  <system-out><![CDATA[2023-10-08T21:31:58.293+09:00  INFO 11619 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.musiclog.controller.PostControllerTest]: PostControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-10-08T21:31:58.298+09:00  INFO 11619 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.musiclog.MusiclogApplication for test class com.musiclog.controller.PostControllerTest
+2023-10-08T21:31:58.317+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for PATCH '/posts/3':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@58c48b92
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@518e6d6c
 
 servletPath:
 pathInfo:/posts/3
@@ -83,13 +83,13 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2023-10-01T08:11:42.442+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+2023-10-08T21:31:58.339+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for POST '/posts':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@2936f48a
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@71adea8d
 
 servletPath:
 pathInfo:/posts
@@ -128,7 +128,7 @@ MockHttpServletRequest:
 
 Handler:
              Type = com.musiclog.controller.PostController
-           Method = com.musiclog.controller.PostController#post(PostCreate)
+           Method = com.musiclog.controller.PostController#post(UserPrincipal, PostCreate)
 
 Async:
     Async started = false
@@ -154,13 +154,13 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2023-10-01T08:11:42.453+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+2023-10-08T21:31:58.360+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for POST '/posts':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@268bb09d
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@14d9d042
 
 servletPath:
 pathInfo:/posts
@@ -196,11 +196,11 @@ MockHttpServletRequest:
        Parameters = {}
           Headers = [Content-Type:"application/json;charset=UTF-8", authorization:"sy", Content-Length:"57"]
              Body = {"title":"제목입니다.","content":"내용입니다."}
-    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sdsd98987@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_ADMIN]]]}
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.musiclog.config.UserPrincipal [Username=sdsd98987@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_ADMIN]]]}
 
 Handler:
              Type = com.musiclog.controller.PostController
-           Method = com.musiclog.controller.PostController#post(PostCreate)
+           Method = com.musiclog.controller.PostController#post(UserPrincipal, PostCreate)
 
 Async:
     Async started = false
@@ -226,13 +226,13 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2023-10-01T08:11:42.495+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+2023-10-08T21:31:58.420+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for GET '/posts/27':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@6fab250b
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@7277fa93
 
 servletPath:
 pathInfo:/posts/27
@@ -296,13 +296,13 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2023-10-01T08:11:42.514+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+2023-10-08T21:31:58.441+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for GET '/posts?page=1&size=10':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@78d3578e
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@1228a579
 
 servletPath:
 pathInfo:/posts
@@ -366,13 +366,13 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2023-10-01T08:11:42.543+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+2023-10-08T21:31:58.475+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for GET '/posts?page=0&size=10':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@68bbd5c2
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@35e79be0
 
 servletPath:
 pathInfo:/posts
@@ -436,13 +436,13 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2023-10-01T08:11:42.589+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+2023-10-08T21:31:58.515+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for PATCH '/posts/50':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@9b5ff2e
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@70a8d2e1
 
 servletPath:
 pathInfo:/posts/50
@@ -507,13 +507,13 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2023-10-01T08:11:42.619+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+2023-10-08T21:31:58.545+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for DELETE '/posts/51':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@5bf963a
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@6bd4d24b
 
 servletPath:
 pathInfo:/posts/51
@@ -547,7 +547,7 @@ MockHttpServletRequest:
        Parameters = {}
           Headers = [Content-Type:"application/json;charset=UTF-8"]
              Body = null
-    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sdsd98987@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_ADMIN]]]}
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.musiclog.config.UserPrincipal [Username=sdsd98987@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_ADMIN]]]}
 
 Handler:
              Type = com.musiclog.controller.PostController
@@ -577,13 +577,13 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2023-10-01T08:11:42.636+09:00  INFO 2067 --- [    Test worker] Spring Security Debugger                 : 
+2023-10-08T21:31:58.561+09:00  INFO 11619 --- [    Test worker] Spring Security Debugger                 : 
 
 ************************************************************
 
 Request received for GET '/posts/1':
 
-org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@398f6f04
+org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper@72ce2982
 
 servletPath:
 pathInfo:/posts/1

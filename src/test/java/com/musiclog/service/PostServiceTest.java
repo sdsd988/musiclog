@@ -1,7 +1,9 @@
 package com.musiclog.service;
 
 import com.musiclog.domain.Post;
+import com.musiclog.domain.User;
 import com.musiclog.exception.PostNotFound;
+import com.musiclog.repository.UserRepository;
 import com.musiclog.repository.post.PostRepository;
 import com.musiclog.request.post.PostCreate;
 import com.musiclog.request.post.PostEdit;
@@ -28,15 +30,27 @@ class PostServiceTest {
     @Autowired
     private PostRepository postRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @BeforeEach
     void clean() {
         postRepository.deleteAll();
+        userRepository.deleteAll();
     }
 
     @Test
     @DisplayName("글 작성")
     void test1() {
         //given
+
+        var user = User.builder()
+                .name("정상윤")
+                .email("sdsd98987@mgmail.com")
+                .password("1234")
+                .build();
+
+        userRepository.save(user);
         PostCreate postCreate = PostCreate.builder()
                 .title("제목입니다.")
                 .content("내용입니다.")
@@ -45,7 +59,7 @@ class PostServiceTest {
 
         //when
 
-        postService.write(postCreate);
+        postService.write(user.getId(), postCreate);
 
         //then
         assertEquals(1L, postRepository.count());

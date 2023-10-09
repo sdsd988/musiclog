@@ -1,7 +1,10 @@
 package com.musiclog.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.musiclog.config.MusiclogMockUser;
 import com.musiclog.domain.Post;
+import com.musiclog.domain.User;
+import com.musiclog.repository.UserRepository;
 import com.musiclog.repository.post.PostRepository;
 import com.musiclog.request.post.PostCreate;
 import com.musiclog.request.post.PostEdit;
@@ -42,9 +45,12 @@ class PostControllerTest {
     @Autowired
     private PostService postService;
 
+    @Autowired
+    private UserRepository userRepository;
     @AfterEach
     void clean(){
         postRepository.deleteAll();
+        userRepository.deleteAll();
     }
 
 
@@ -74,8 +80,8 @@ class PostControllerTest {
     }
 
     @Test
-    @WithMockUser(username = "sdsd98987@gmail.com" ,
-            roles = {"ADMIN"})
+    @MusiclogMockUser
+//    @WithMockUser(username = "sdsd98987@gmail.com" , roles = {"ADMIN"})
     @DisplayName("글 작성")
     void test3() throws Exception {
 
@@ -212,14 +218,18 @@ class PostControllerTest {
 
 
     @Test
-    @WithMockUser(username = "sdsd98987@gmail.com" ,
-            roles = {"ADMIN"})
+    @MusiclogMockUser
     @DisplayName("게시글 삭제")
     void test8() throws Exception {
         //given
+
+
+        User user = userRepository.findAll().get(0);
+
         Post post = Post.builder()
                 .title("루시")
                 .content("조깅")
+                .user(user)
                 .build();
 
         postRepository.save(post);
